@@ -48,13 +48,24 @@
     }
 
     ul {
-      list-style-type: none;
+      list-style-type: none; /* remove marcador padrão */
       padding-left: 0;
       margin: 0;
     }
 
     li {
       margin: 15px 0;
+      position: relative;
+      padding-left: 25px; /* espaço para o ponto */
+    }
+
+    li::before {
+      content: "•"; /* ponto */
+      position: absolute;
+      left: 0;
+      color: black; /* cor do ponto */
+      font-size: 1.5em;
+      line-height: 1;
     }
 
     li a {
