@@ -4,7 +4,7 @@
   <link rel="icon" type="image/png" href="imagens/icon.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title class="title">Robótica</title>
+  <title>Robótica</title>
   <link rel="stylesheet" href="site/style_text.css" />
   <link rel="stylesheet" href="site/style_title.css" />
   <style>
@@ -68,6 +68,7 @@
       padding-left: 20px;
     }
 
+    /* imagens “soltas” no texto (fora do bloco lado-a-lado) */
     .author-text img {
       float: right;
       margin: 0 0 10px 20px;
@@ -82,7 +83,6 @@
     }
 
     /* ===== IMAGENS INSERIDAS NO TEXTO ===== */
-
     .image-right,
     .image-left {
       width: 250px;
@@ -91,15 +91,8 @@
       box-shadow: none;
     }
 
-    .image-right {
-      float: right;
-      margin: 10px 0 10px 20px;
-    }
-
-    .image-left {
-      float: left;
-      margin: 10px 20px 10px 0;
-    }
+    .image-right { float: right; margin: 10px 0 10px 20px; }
+    .image-left  { float: left;  margin: 10px 20px 10px 0; }
 
     figure.image-right,
     figure.image-left {
@@ -130,16 +123,21 @@
     /* ===== DUAS IMAGENS LADO A LADO (corrigido) ===== */
     .two-images {
       display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      background-color: #5cb85c; /* mesma cor do fundo interno */
-      margin: 18px 0;
       gap: 20px;
+      margin: 18px 0;
+      /* sem fundo extra, usa o mesmo do container */
+      background: transparent;
+    }
+
+    /* evita herdar o float das imagens gerais */
+    .two-images figure,
+    .two-images img {
+      float: none !important;
     }
 
     .two-images figure {
       flex: 0 0 auto;
-      width: 250px;
+      width: 250px;       /* mesmo tamanho das outras */
       margin: 0;
       text-align: center;
       background: none;
@@ -163,10 +161,20 @@
     }
 
     @media (max-width: 700px) {
+      .author-text img,
+      .image-right,
+      .image-left,
+      figure.image-right,
+      figure.image-left {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+        width: 90%;
+      }
+
       .two-images {
         flex-direction: column;
         align-items: center;
-        background-color: transparent;
       }
 
       .two-images figure {
@@ -189,10 +197,15 @@
     }
   </style>
 </head>
+<body>
+  <div class="container-main">
+    <header>
+      <h1 class="title">Robótica</h1>
+    </header>
 
     <article class="author-text">
       <img src="imagens/Logo_Tamandutech.png" alt="Logo da Lamandutech" />
-      <p  class="subtitle">Minha Experiência na Tamandutech – Equipe de Robótica da UFABC</p> 
+      <p class="subtitle">Minha Experiência na Tamandutech – Equipe de Robótica da UFABC</p>
       <p>Em julho de 2025, dei um passo muito importante na minha trajetória acadêmica ao ingressar na Tamandutech, a equipe oficial de robótica da Universidade Federal do ABC (UFABC). A Tamandutech é reconhecida como uma das maiores e mais respeitadas equipes de robótica do país, com atuação em diversas modalidades, como Combate, Hóquei, Seguidor de Linha, Sumo e Sumo LEGO. O grupo possui um histórico impressionante de títulos e troféus conquistados em competições regionais e nacionais, o que torna o processo de ingresso altamente competitivo.</p>
       <p>Para fazer parte dessa equipe, os candidatos passam por um rigoroso processo seletivo, composto por dinâmicas de grupo, entrevistas individuais e, por fim, um período de estágio prático. Nessa última etapa, cada candidato deve projetar, montar e competir com um robô de Sumo LEGO, aplicando na prática os conhecimentos de mecânica, eletrônica e programação.</p>
       <p>Depois de algumas semanas intensas de desafios e aprendizado, tive a felicidade de ser aprovado e oficialmente integrar essa equipe extraordinária, uma verdadeira família de engenheiros e entusiastas da tecnologia.</p>
@@ -202,7 +215,7 @@
       <img src="imagens/Flip_Real.jpg" alt="Flip Real" class="image-right">
       <p>Após o término das aulas de capacitação, iniciei meu primeiro projeto oficial na Tamandutech, trabalhando ao lado da minha líder de projeto, Nicoly Regina Alves Corrêa Anselmi, e do colega Carlos Eduardo Salum Storto. Juntos, projetamos e construímos o robô de combate da categoria fairyweight (150g) “Flip”, um vertical spinner inspirado em um dos maiores campeões da BattleBots, o lendário Bite Force, da equipe norte-americana Aptyx Designs, referência mundial em robustez e desempenho. Sempre admirei a consistência e eficiência desse robô, e buscávamos refletir esses mesmos princípios em nosso projeto.</p>
 
-      <p  class="subtitle">Etapa de Desenvolvimento</p>
+      <p class="subtitle">Etapa de Desenvolvimento</p>
       <p>1. Eletrônica:</p>
       <img src="imagens/Flip_Eletronica.png" alt="Flip Eletronica" class="image-right">
       <p>Iniciamos o trabalho pela parte eletrônica, buscando um sistema funcional, seguro e eficiente. Utilizamos uma placa controladora Dino V2 da Robocore, dois motores N20 de 1000 rpm para a locomoção e um motor brushless de 15.000 rpm para a arma principal. O controle da arma foi realizado através de um ESC (Electronic Speed Controller), garantindo a proteção do circuito contra sobrecargas. Além disso, implementamos um receptor FlySky para comunicação via rádio e o sistema obrigatório de segurança exigido nas competições: um LED indicador de energia e uma chave geral de desligamento rápido.</p>
@@ -213,7 +226,7 @@
       <p>3. Rodas e Pneus:</p>
       <p>Optamos por fabricar nossas próprias rodas e pneus, garantindo personalização total e melhor desempenho. As rodas foram impressas em PETG, um polímero mais rígido e leve, enquanto os pneus foram moldados com cola de poliuretano (PU) em moldes desenvolvidos por nós mesmos. O resultado foi um conjunto resistente, durável e com excelente aderência, essencial em combates intensos.</p>
 
-      <p  class="subtitle">Primeira Competição: RoboChallenger 2025</p>
+      <p class="subtitle">Primeira Competição: RoboChallenger 2025</p>
       <p>Com o Flip pronto, participamos da nossa primeira competição oficial, a RoboChallenger, realizada no Instituto Mauá de Tecnologia, entre os dias 3 e 5 de outubro de 2025.</p>
       <p>Dia 1 – Inspeção Técnica:</p>
       <p>O primeiro dia foi dedicado à inspeção dos robôs. As equipes apresentaram seus projetos aos juízes, que verificaram os critérios de segurança, peso, integridade elétrica e funcionalidade. O Flip passou por todas as etapas sem restrições, o que já foi motivo de orgulho e alívio para nós.</p>
@@ -222,6 +235,7 @@
       <p>Na segunda luta, enfrentamos o temido Roçadeira, da equipe Device Combate, atual líder do ranking nacional e campeão da competição...</p>
       <p>Entrei como piloto, ciente do desafio. Sabia que sua principal vulnerabilidade eram as rodas expostas, e planejei atacar por esse ponto. Contudo, logo no segundo golpe, a arma de titânio do Roçadeira atingiu o chassi do Flip, abrindo uma fenda que expôs a bateria e danificou o receptor, resultando em nocaute imediato.</p>
 
+      <!-- DUAS IMAGENS LADO A LADO (chassi à esquerda, receptor à direita) -->
       <div class="two-images" aria-label="Fotos de danos ao Flip">
         <figure>
           <img src="imagens/Chassi_Quebrado.jpg" alt="Chassi quebrado do Flip">
@@ -232,19 +246,19 @@
           <figcaption>Receptor danificado após impacto</figcaption>
         </figure>
       </div>
-      
+
       <p>Apesar da derrota, mantivemos a calma, substituímos as peças danificadas e ajustamos o sistema para o próximo confronto.</p>
       <p>Na terceira luta, enfrentamos o Lohki, também da equipe Phoenix. Com movimentação muito mais ágil, ele venceu por 24 a 9 pontos. Após a partida, trocamos experiências técnicas e dicas de melhoria com a equipe adversária, um dos aspectos mais valiosos das competições.</p>
       <p>Com essa derrota, fomos eliminados do torneio, encerrando nossa participação em 12º lugar geral. Apesar do resultado modesto, saímos satisfeitos com o desempenho e, principalmente, com o aprendizado obtido em cada etapa.</p>
       <p>Dia 3 – Aprendizado e Colaboração:</p>
       <p>No último dia do evento, não tivemos mais combates, mas aproveitei a oportunidade para interagir com outras equipes, observar de perto os robôs finalistas e aprender novas soluções de design e estratégia. Também ajudei colegas da Tamandutech que ainda estavam competindo, participando do suporte técnico, da substituição de peças e da organização dos pits.</p>
-      <p>Essa vivência me permitiu compreender melhor o espírito colaborativo da comunidade de robótica: mesmo em um ambiente de competição, o aprendizado coletivo e o compartilhamento de conhecimento prevalecem.</p>
-      
-      <p  class="subtitle">Reflexão e Próximos Passos</p>
+
+      <p class="subtitle">Reflexão e Próximos Passos</p>
       <p>Participar da Tamandutech e estrear na RoboChallenger foi uma experiência transformadora. Aprendi não apenas sobre engenharia e robótica, mas também sobre trabalho em equipe, tomada de decisão sob pressão e resiliência diante dos desafios.</p>
       <p>Atualmente, continuo aprimorando o Flip, com foco em aumentar a durabilidade do chassi, otimizar a arma principal e aprimorar a distribuição de peso, buscando um desempenho mais equilibrado e competitivo.</p>
       <p>Nosso objetivo é claro: voltar às arenas mais fortes, mais preparados e prontos para enfrentar novamente o lendário Roçadeira, desta vez, em condições de vitória.</p>
-     <ul class="links">
+
+      <ul class="links">
         <li><a href="https://www.notion.so/Central-de-Informa-es-8d9fe58961c343d9908b843822e6fd30?p=cfce034e1d4f4d189a8eea4d1f300a2d&pm=c" target="_blank" rel="noopener noreferrer">Notion</a></li>
       </ul>
     </article>
