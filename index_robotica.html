@@ -81,6 +81,82 @@
       clear: both;
     }
 
+    /* ===== NOVOS ESTILOS PARA INSERIR IMAGENS NO TEXTO ===== */
+
+    /* imagem flutuando à direita do texto */
+    .image-right {
+      float: right;
+      width: 250px;
+      margin: 10px 0 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px black;
+    }
+
+    /* imagem flutuando à esquerda do texto */
+    .image-left {
+      float: left;
+      width: 250px;
+      margin: 10px 20px 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 5px black;
+    }
+
+    /* figura com legenda (opcional) */
+    figure.image-right, figure.image-left {
+      width: 250px;
+      text-align: center;
+      font-size: 0.9em;
+      color: black;
+    }
+
+    figure.image-right img,
+    figure.image-left img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 5px black;
+    }
+
+    figure.image-right {
+      float: right;
+      margin: 10px 0 10px 20px;
+    }
+
+    figure.image-left {
+      float: left;
+      margin: 10px 20px 10px 0;
+    }
+
+    figure figcaption {
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    /* garante que o layout volte ao normal após imagens flutuantes */
+    .author-text::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* ===== RESPONSIVIDADE ===== */
+    @media (max-width: 700px) {
+      .author-text img,
+      .image-right,
+      .image-left,
+      figure.image-right,
+      figure.image-left {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+        width: 90%;
+      }
+
+      .author-text {
+        text-align: left;
+      }
+    }
+
+    /* ===== BOTÃO DE VOLTAR ===== */
     .back-button {
       width: 50px;
       height: auto;
@@ -94,19 +170,9 @@
       height: 60px;
     }
 
-    @media (max-width: 700px) {
-      .author-text img {
-        float: none;
-        display: block;
-        margin: 0 auto 20px auto;
-      }
-
-      .author-text {
-        text-align: left;
-      }
-    }
   </style>
 </head>
+
 <body>
   <div class="container-main">
     <header>
@@ -123,6 +189,7 @@
 
       <p class="subtitle">Meu Primeiro Projeto: Robô “Flip”</p>
       <img src="imagens/Flip_CAD.png" alt="Flip CAD" class="image-right">
+      <figcaption>Robô “Flip” — categoria Fairyweight (150g)</figcaption>
       <p>Após o término das aulas de capacitação, iniciei meu primeiro projeto oficial na Tamandutech, trabalhando ao lado da minha líder de projeto, Nicoly Regina Alves Corrêa Anselmi, e do colega Carlos Eduardo Salum Storto. Juntos, projetamos e construímos o robô de combate da categoria fairyweight (150g) “Flip”, um vertical spinner inspirado em um dos maiores campeões da BattleBots, o lendário Bite Force, da equipe norte-americana Aptyx Designs, referência mundial em robustez e desempenho. Sempre admirei a consistência e eficiência desse robô, e buscávamos refletir esses mesmos princípios em nosso projeto.</p>
 
       <p  class="subtitle">Etapa de Desenvolvimento</p>
