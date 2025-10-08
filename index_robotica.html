@@ -50,8 +50,10 @@
       margin-bottom: 10px;
     }
 
-    .links a {
+    /* ===== LINKS GERAIS (corrigido e padronizado) ===== */
+    a, .links a {
       color: black;
+      font-weight: bold;
       text-shadow:
         -1px -1px 0 green,
          1px -1px 0 green,
@@ -59,8 +61,15 @@
          1px  1px 0 green;
       text-decoration: none;
     }
-    .links a:hover { text-decoration: underline; }
-    .links ul { list-style-type: disc; padding-left: 20px; }
+
+    a:hover, .links a:hover {
+      text-decoration: underline;
+    }
+
+    .links ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
 
     /* imagens “soltas” no texto */
     .author-text img {
@@ -98,7 +107,6 @@
       background: transparent;
     }
 
-    /* evita herdar float */
     .two-images figure, .two-images img { float: none !important; }
 
     .two-images figure {
@@ -113,15 +121,15 @@
 
     .two-images img {
       width: 250px;
-      height: 250px; /* tamanho exato */
-      object-fit: cover; /* mantém proporção sem distorcer */
+      height: 250px;
+      object-fit: cover;
       border-radius: 10px;
       border: none;
       box-shadow: none;
       display: block;
     }
 
-    .two-images figcaption { display: none; } /* remove legendas */
+    .two-images figcaption { display: none; }
 
     @media (max-width: 700px) {
       .author-text img,
