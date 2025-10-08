@@ -81,74 +81,76 @@
       clear: both;
     }
 
-    /* ===== NOVOS ESTILOS PARA INSERIR IMAGENS NO TEXTO ===== */
+    /* ===== IMAGENS INSERIDAS NO TEXTO (ATUALIZADO) ===== */
 
-    /* imagem flutuando à direita do texto */
     .image-right {
       float: right;
-      width: 250px;
+      width: 260px;
       margin: 10px 0 10px 20px;
       border-radius: 10px;
-      box-shadow: 0 0 5px black;
+      border: none;
+      box-shadow: none; /* sem bordas ou sombra */
     }
 
-    /* imagem flutuando à esquerda do texto */
     .image-left {
       float: left;
-      width: 250px;
+      width: 260px;
       margin: 10px 20px 10px 0;
       border-radius: 10px;
-      box-shadow: 0 0 5px black;
+      border: none;
+      box-shadow: none;
     }
 
-    /* figura com legenda (opcional) */
-    figure.image-right, figure.image-left {
-      width: 250px;
+    figure.image-right,
+    figure.image-left {
+      width: 260px;
       text-align: center;
       font-size: 0.9em;
       color: black;
+      background: none;
+      border: none;
+      margin: 10px 0 10px 20px;
+    }
+
+    figure.image-left {
+      margin: 10px 20px 10px 0;
     }
 
     figure.image-right img,
     figure.image-left img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 0 5px black;
-    }
-
-    figure.image-right {
-      float: right;
-      margin: 10px 0 10px 20px;
-    }
-
-    figure.image-left {
-      float: left;
-      margin: 10px 20px 10px 0;
+      border: none;
+      box-shadow: none;
     }
 
     figure figcaption {
       margin-top: 5px;
       font-style: italic;
+      font-size: 0.85em;
+      color: #111;
+      text-align: center;
     }
 
-    /* garante que o layout volte ao normal após imagens flutuantes */
     .author-text::after {
       content: "";
       display: block;
       clear: both;
     }
 
-    /* ===== RESPONSIVIDADE ===== */
     @media (max-width: 700px) {
-      .author-text img,
       .image-right,
       .image-left,
       figure.image-right,
       figure.image-left {
         float: none;
         display: block;
-        margin: 0 auto 20px auto;
+        margin: 15px auto;
         width: 90%;
+      }
+
+      figure figcaption {
+        text-align: center;
       }
 
       .author-text {
@@ -169,7 +171,6 @@
       position: relative;
       height: 60px;
     }
-
   </style>
 </head>
 
