@@ -81,13 +81,15 @@
       clear: both;
     }
 
+    /* ===== IMAGENS INSERIDAS NO TEXTO (ATUALIZADO) ===== */
+
     .image-right {
       float: right;
       width: 260px;
       margin: 10px 0 10px 20px;
       border-radius: 10px;
       border: none;
-      box-shadow: none;
+      box-shadow: none; /* sem bordas ou sombra */
     }
 
     .image-left {
@@ -130,21 +132,70 @@
       text-align: center;
     }
 
+    /* ===== NOVO: LAYOUT LADO-A-LADO PARA DUAS IMAGENS ===== */
+    .two-images {
+      display: flex;
+      gap: 20px;
+      margin: 18px 0;
+      align-items: flex-start;
+    }
+
+    .two-images figure {
+      flex: 1 1 50%;
+      margin: 0;
+      background: none;
+      border: none;
+      text-align: center;
+    }
+
+    .two-images figure img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .two-images figcaption {
+      margin-top: 6px;
+      font-size: 0.9em;
+      color: #111;
+      font-style: italic;
+    }
+
+    /* garante que o layout volte ao normal após imagens flutuantes */
     .author-text::after {
       content: "";
       display: block;
       clear: both;
     }
 
+    /* ===== RESPONSIVIDADE ===== */
+    @media (max-width: 900px) {
+      .two-images {
+        gap: 12px;
+      }
+    }
+
     @media (max-width: 700px) {
+      .author-text img,
       .image-right,
       .image-left,
       figure.image-right,
       figure.image-left {
         float: none;
         display: block;
-        margin: 15px auto;
+        margin: 0 auto 20px auto;
         width: 90%;
+      }
+
+      .two-images {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .two-images figure {
+        width: 90%;
+        margin: 12px auto;
       }
 
       figure figcaption {
@@ -155,7 +206,8 @@
         text-align: left;
       }
     }
-    
+
+    /* ===== BOTÃO DE VOLTAR ===== */
     .back-button {
       width: 50px;
       height: auto;
@@ -170,12 +222,6 @@
     }
   </style>
 </head>
-
-<body>
-  <div class="container-main">
-    <header>
-      <h1 class="title">Robótica</h1>
-    </header>
 
     <article class="author-text">
       <img src="imagens/Logo_Tamandutech.png" alt="Logo da Lamandutech" />
@@ -208,6 +254,18 @@
       <p>Nosso primeiro combate foi contra o robô Quero-Quero, da equipe Phoenix, e vencemos por W.O., avançando automaticamente.</p>
       <p>Na segunda luta, enfrentamos o temido Roçadeira, da equipe Device Combate, atual líder do ranking nacional e campeão da competição...</p>
       <p>Entrei como piloto, ciente do desafio. Sabia que sua principal vulnerabilidade eram as rodas expostas, e planejei atacar por esse ponto. Contudo, logo no segundo golpe, a arma de titânio do Roçadeira atingiu o chassi do Flip, abrindo uma fenda que expôs a bateria e danificou o receptor, resultando em nocaute imediato.</p>
+
+      <div class="two-images" aria-label="Fotos de danos ao Flip">
+        <figure>
+          <img src="imagens/Chassi_Quebrado.jpg" alt="Chassi quebrado do Flip">
+          <figcaption>Chassi quebrado — fenda que expôs a bateria</figcaption>
+        </figure>
+        <figure>
+          <img src="imagens/Receptor_Quebrado.jpg" alt="Receptor danificado do Flip">
+          <figcaption>Receptor danificado após impacto</figcaption>
+        </figure>
+      </div>
+      
       <p>Apesar da derrota, mantivemos a calma, substituímos as peças danificadas e ajustamos o sistema para o próximo confronto.</p>
       <p>Na terceira luta, enfrentamos o Lohki, também da equipe Phoenix. Com movimentação muito mais ágil, ele venceu por 24 a 9 pontos. Após a partida, trocamos experiências técnicas e dicas de melhoria com a equipe adversária, um dos aspectos mais valiosos das competições.</p>
       <p>Com essa derrota, fomos eliminados do torneio, encerrando nossa participação em 12º lugar geral. Apesar do resultado modesto, saímos satisfeitos com o desempenho e, principalmente, com o aprendizado obtido em cada etapa.</p>
