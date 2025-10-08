@@ -1,85 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="icon" type="image/png" href="imagens/icon.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title class="title">Robótica</title>
-    <link rel="stylesheet" href="site/style_title.css">
-    <style>
-        body {
-            background-color: green;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+  <link rel="icon" type="image/png" href="imagens/icon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title class="title">Apresentação do Autor</title>
+  <link rel="stylesheet" href="site/style_text.css" />
+  <link rel="stylesheet" href="site/style_title.css" />
+  <style>
+    body {
+      background-color: green;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-        .container-main {
-            background-color: #5cb85c;
-            width: 70%;
-            margin: 30px auto;
-            padding: 20px;
-            box-shadow: 0 0 10px black;
-        }
+    .container-main {
+      background-color: #5cb85c;
+      width: 70%;
+      margin: 30px auto;
+      padding: 20px;
+      box-shadow: 0 0 10px black;
+    }
 
-        .title {
-            color: black;
-            text-shadow: 
-                -1px -1px 0 green,  
-                 1px -1px 0 green,
-                -1px  1px 0 green,
-                 1px  1px 0 green;
-            padding: 10px;
-            text-align: center;
-            font-size: 2em;
-            border: 5px solid green;
-            background-color: black;
-            margin-bottom: 20px;
-        }
+    .title {
+      color: black;
+      text-shadow:
+        -1px -1px 0 green,
+         1px -1px 0 green,
+        -1px  1px 0 green,
+         1px  1px 0 green;
+      padding: 10px;
+      text-align: center;
+      font-size: 2em;
+      border: 5px solid green;
+      background-color: black;
+      margin-bottom: 20px;
+    }
 
-        .links a {
-            color: black;
-            text-decoration: none;
-            text-shadow: 
-                -1px -1px 0 green,  
-                 1px -1px 0 green,
-                -1px  1px 0 green,
-                 1px  1px 0 green;
-        }
+    .links a {
+      color: black;
+      text-shadow:
+        -1px -1px 0 green,
+         1px -1px 0 green,
+        -1px  1px 0 green,
+         1px  1px 0 green;
+      text-decoration: none;
+    }
 
-        .links a:hover {
-            text-decoration: underline;
-        }
+    .links a:hover {
+      text-decoration: underline;
+    }
 
-        .back-button {
-            width: 50px;
-            height: auto;
-            position: absolute;
-            right: 20px;
-            bottom: 20px;
-        }
+    .links ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
 
-        .back-button-container {
-            position: relative;
-            height: 60px;
-        }
-    </style>
+    .author-text img {
+      float: right;
+      margin: 0 0 10px 20px;
+      width: 250px;
+      border-radius: 10px;
+    }
+
+    .author-text::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .back-button {
+      width: 50px;
+      height: auto;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+    }
+
+    .back-button-container {
+      position: relative;
+      height: 60px;
+    }
+
+    @media (max-width: 700px) {
+      .author-text img {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+      }
+
+      .author-text {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container-main">
-        <header>
-            <h1 class="title">Robótica</h1>
-        </header>
-        <article>
-            <p>Em desenvolvimento.</p>
-            <ul class="links">
-                <li><a href="https://github.com/enrzan/Pyton_GoogleColab" target="_blank" rel="noopener noreferrer">Exemplo de hiperlink</a></li>
-            </ul>
-        </article>
-        <div class="back-button-container">
-            <a href="index.html">
-                <img src="imagens/Round-Back-Button-PNG-Image-Background.png" alt="Voltar" class="back-button">
-            </a>
-        </div>
+  <div class="container-main">
+    <header>
+      <h1 class="title">Apresentação do Autor</h1>
+    </header>
+
+    <article class="author-text">
+      <img src="imagens/Logo_Tamandutech.png" alt="Logo da Lamandutech" />
+      <p>Minha Experiência na Tamandutech – Equipe de Robótica da UFABC</p> 
+      <p>Em julho de 2025, dei um passo muito importante na minha trajetória acadêmica ao ingressar na Tamandutech, a equipe oficial de robótica da Universidade Federal do ABC (UFABC). A Tamandutech é reconhecida como uma das maiores e mais respeitadas equipes de robótica do país, com atuação em diversas modalidades, como Combate, Hóquei, Seguidor de Linha, Sumo e Sumo LEGO. O grupo possui um histórico impressionante de títulos e troféus conquistados em competições regionais e nacionais, o que torna o processo de ingresso altamente competitivo.</p>
+      <p>Para fazer parte dessa equipe, os candidatos passam por um rigoroso processo seletivo, composto por dinâmicas de grupo, entrevistas individuais e, por fim, um período de estágio prático. Nessa última etapa, cada candidato deve projetar, montar e competir com um robô de Sumo LEGO, aplicando na prática os conhecimentos de mecânica, eletrônica e programação.</p>
+      <p>Depois de algumas semanas intensas de desafios e aprendizado, tive a felicidade de ser aprovado e oficialmente integrar essa equipe extraordinária, uma verdadeira família de engenheiros e entusiastas da tecnologia.</p>
+      <p>Logo nas primeiras semanas, participei de uma série de workshops introdutórios, que abordaram temas essenciais como eletrônica básica, mecânica aplicada, controle, programação embarcada e protocolos de segurança em competições. Esses treinamentos foram fundamentais para nos preparar para o ambiente técnico e colaborativo da equipe.</p>
+      <p></p>
+      <p>Meu Primeiro Projeto: Robô “Flip”</p>
+      <p>Após o término das aulas de capacitação, iniciei meu primeiro projeto oficial na Tamandutech, trabalhando ao lado da minha líder de projeto, Nicoly Regina Alves Corrêa Anselmi, e do colega Carlos Eduardo Salum Storto. Juntos, projetamos e construímos o robô de combate da categoria fairyweight (150g) “Flip”, um vertical spinner inspirado em um dos maiores campeões da BattleBots, o lendário Bite Force, da equipe norte-americana Aptyx Designs, referência mundial em robustez e desempenho. Sempre admirei a consistência e eficiência desse robô, e buscávamos refletir esses mesmos princípios em nosso projeto.</p>
+      <p></p>
+      <p>Etapa de Desenvolvimento</p>
+      <p>1. Eletrônica:</p>
+      <p>Iniciamos o trabalho pela parte eletrônica, buscando um sistema funcional, seguro e eficiente. Utilizamos uma placa controladora Dino V2 da Robocore, dois motores N20 de 1000 rpm para a locomoção e um motor brushless de 15.000 rpm para a arma principal. O controle da arma foi realizado através de um ESC (Electronic Speed Controller), garantindo a proteção do circuito contra sobrecargas. Além disso, implementamos um receptor FlySky para comunicação via rádio e o sistema obrigatório de segurança exigido nas competições: um LED indicador de energia e uma chave geral de desligamento rápido.</p>
+      <p>2. Estrutura e Chassi:</p>
+      <p>A construção do chassi foi uma das etapas mais trabalhosas e desafiadoras. Produzimos diversas versões e ajustes, até chegarmos a um design otimizado. O chassi foi impresso em 3D com TPU (poliuretano termoplástico), material altamente flexível e recomendado para robôs de combate por sua resistência ao impacto e capacidade de absorção de choques.</p>
+      <p>3. Rodas e Pneus:</p>
+      <p>Optamos por fabricar nossas próprias rodas e pneus, garantindo personalização total e melhor desempenho. As rodas foram impressas em PETG, um polímero mais rígido e leve, enquanto os pneus foram moldados com cola de poliuretano (PU) em moldes desenvolvidos por nós mesmos. O resultado foi um conjunto resistente, durável e com excelente aderência, essencial em combates intensos.</p>
+      <p></p>
+      <p>Primeira Competição: RoboChallenger 2025</p>
+      <p>Com o Flip pronto, participamos da nossa primeira competição oficial, a RoboChallenger, realizada no Instituto Mauá de Tecnologia, entre os dias 3 e 5 de outubro de 2025.</p>
+      <p>Dia 1 – Inspeção Técnica:</p>
+      <p>O primeiro dia foi dedicado à inspeção dos robôs. As equipes apresentaram seus projetos aos juízes, que verificaram os critérios de segurança, peso, integridade elétrica e funcionalidade. O Flip passou por todas as etapas sem restrições, o que já foi motivo de orgulho e alívio para nós.</p>
+      <p>Dia 2 – Lutas Oficiais:</p>
+      <p>Nosso primeiro combate foi contra o robô Quero-Quero, da equipe Phoenix, e vencemos por W.O., avançando automaticamente.</p>
+      <p>Na segunda luta, enfrentamos o temido Roçadeira, da equipe Device Combate, atual líder do ranking nacional e campeão da competição. O Roçadeira é um robô impressionante — baixo, largo e equipado com uma arma horizontal de titânio. Sua eletrônica é semelhante à do Flip, mas sua estrutura extremamente robusta e a excelente pilotagem da equipe o tornam quase imbatível.</p>
+      <p>Entrei como piloto, ciente do desafio. Sabia que sua principal vulnerabilidade eram as rodas expostas, e planejei atacar por esse ponto. Contudo, logo no segundo golpe, a arma de titânio do Roçadeira atingiu o chassi do Flip, abrindo uma fenda que expôs a bateria e danificou o receptor, resultando em nocaute imediato.</p>
+      <p>Apesar da derrota, mantivemos a calma, substituímos as peças danificadas e ajustamos o sistema para o próximo confronto.</p>
+      <p>Na terceira luta, enfrentamos o Lohki, também da equipe Phoenix. Com movimentação muito mais ágil, ele venceu por 24 a 9 pontos. Após a partida, trocamos experiências técnicas e dicas de melhoria com a equipe adversária, um dos aspectos mais valiosos das competições.</p>
+      <p>Com essa derrota, fomos eliminados do torneio, encerrando nossa participação em 12º lugar geral. Apesar do resultado modesto, saímos satisfeitos com o desempenho e, principalmente, com o aprendizado obtido em cada etapa.</p>
+      <p>Dia 3 – Aprendizado e Colaboração:</p>
+      <p>No último dia do evento, não tivemos mais combates, mas aproveitei a oportunidade para interagir com outras equipes, observar de perto os robôs finalistas e aprender novas soluções de design e estratégia. Também ajudei colegas da Tamandutech que ainda estavam competindo, participando do suporte técnico, da substituição de peças e da organização dos pits.</p>
+      <p>Essa vivência me permitiu compreender melhor o espírito colaborativo da comunidade de robótica: mesmo em um ambiente de competição, o aprendizado coletivo e o compartilhamento de conhecimento prevalecem.</p>
+      <p></p>
+      <p>Reflexão e Próximos Passos</p>
+      <p>Participar da Tamandutech e estrear na RoboChallenger foi uma experiência transformadora. Aprendi não apenas sobre engenharia e robótica, mas também sobre trabalho em equipe, tomada de decisão sob pressão e resiliência diante dos desafios.</p>
+      <p>Atualmente, continuo aprimorando o Flip, com foco em aumentar a durabilidade do chassi, otimizar a arma principal e aprimorar a distribuição de peso, buscando um desempenho mais equilibrado e competitivo.</p>
+      <p>Nosso objetivo é claro: voltar às arenas mais fortes, mais preparados e prontos para enfrentar novamente o lendário Roçadeira, desta vez, em condições de vitória.</p>
+     <ul class="links">
+        <li><a href="https://github.com/enrzan" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K1523002T0" target="_blank" rel="noopener noreferrer">Lattes</a></li>
+        <li><a href="https://www.linkedin.com/in/enrico-zangirolami-raimundo-a85987359/" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
+      </ul>
+    </article>
+
+    <div class="back-button-container">
+      <a href="index.html">
+        <img src="imagens/Round-Back-Button-PNG-Image-Background.png" alt="Voltar" class="back-button" />
+      </a>
     </div>
+  </div>
 </body>
 </html>
