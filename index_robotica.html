@@ -60,7 +60,6 @@
          1px  1px 0 green;
       text-decoration: none;
     }
-
     a:hover, .links a:hover {
       text-decoration: underline;
     }
@@ -102,9 +101,7 @@
       margin: 18px 0;
       background: transparent;
     }
-
     .two-images figure, .two-images img { float: none !important; }
-
     .two-images figure {
       flex: 0 0 auto;
       width: 250px;
@@ -114,7 +111,6 @@
       background: none;
       border: none;
     }
-
     .two-images img {
       width: 250px;
       height: 250px;
@@ -124,7 +120,6 @@
       box-shadow: none;
       display: block;
     }
-
     .two-images figcaption { display: none; }
 
     @media (max-width: 700px) {
@@ -138,17 +133,14 @@
         margin: 0 auto 20px auto;
         width: 90%;
       }
-
       .two-images {
         flex-direction: column;
         align-items: center;
       }
-
       .two-images figure {
         width: 90%;
         height: auto;
       }
-
       .two-images img {
         width: 100%;
         height: auto;
@@ -163,20 +155,29 @@
       right: 20px;
       bottom: 20px;
     }
-    .back-button-container {
-      position: relative;
-      height: 60px;
-    }
+    .back-button-container { position: relative; height: 60px; }
 
-    /* ====== Acordeão (abas retráteis sem setas) ====== */
+    /* ====== Acordeão (abas retráteis) ====== */
     .accordion-header {
       cursor: pointer;
       user-select: none;
-      position: relative;
+      transition: all 0.2s ease;
+      border-bottom: 2px solid transparent; /* linha aparece no hover */
     }
+    /* sublinhado ao passar o mouse */
+    .accordion-header:hover {
+      border-bottom: 2px solid black;
+    }
+    /* remove setas por completo */
+    .accordion-header::after { content: ""; display: none; }
+
+    /* painel fechado/aberto controlado por aria-expanded */
     .accordion-panel {
       display: none;
       margin-top: 8px;
+    }
+    .accordion-header[aria-expanded="true"] + .accordion-panel {
+      display: block;
     }
   </style>
 </head>
@@ -188,54 +189,59 @@
     </header>
 
     <article class="author-text">
-      <!-- ABA 1 -->
+      <!-- ABA 1: Minha Experiência na Tamandutech -->
       <p class="subtitle accordion-header" role="button" tabindex="0" aria-expanded="false">
         Minha Experiência na Tamandutech
       </p>
       <div class="accordion-panel" id="aba-experiencia">
         <img src="imagens/Logo_Tamandutech.png" alt="Logo da Lamandutech" />
-        <p>Em julho de 2025, dei um passo muito importante na minha trajetória técnica ao ingressar na Tamandutech...</p>
-        <p>Para fazer parte dessa equipe, os candidatos passam por um rigoroso processo seletivo...</p>
-        <p>Depois de algumas semanas intensas de desafios e aprendizado...</p>
-        <p>Logo nas primeiras semanas, participei de uma série de workshops introdutórios...</p>
+        <p>Em julho de 2025, dei um passo muito importante na minha trajetória técnica ao ingressar na Tamandutech, a equipe oficial de robótica da Universidade Federal do ABC (UFABC). A Tamandutech é reconhecida como uma das maiores e mais respeitadas equipes de robótica do país, com atuação em diversas modalidades, como Combate, Hóquei, Seguidor de Linha, Sumo e Sumo LEGO. O grupo possui um histórico impressionante de títulos e troféus conquistados em competições regionais e nacionais, o que torna o processo de ingresso altamente competitivo.</p>
+        <p>Para fazer parte dessa equipe, os candidatos passam por um rigoroso processo seletivo, composto por dinâmicas de grupo, entrevistas individuais e, por fim, um período de estágio prático. Nessa última etapa, cada candidato deve projetar, montar e competir com um robô de Sumo LEGO, aplicando na prática os conhecimentos de mecânica, eletrônica e programação.</p>
+        <p>Depois de algumas semanas intensas de desafios e aprendizado, tive a felicidade de ser aprovado e oficialmente integrar essa equipe extraordinária, uma verdadeira família de engenheiros e entusiastas da tecnologia.</p>
+        <p>Logo nas primeiras semanas, participei de uma série de workshops introdutórios, que abordaram temas essenciais como eletrônica básica, mecânica aplicada, controle, programação embarcada e protocolos de segurança em competições. Esses treinamentos foram fundamentais para nos preparar para o ambiente técnico e colaborativo da equipe.</p>
       </div>
 
-      <!-- ABA 2 -->
+      <!-- ABA 2: Meu Primeiro Projeto: Robô “Flip” (com aba interna "Etapa de Desenvolvimento") -->
       <p class="subtitle accordion-header" role="button" tabindex="0" aria-expanded="false">
         Meu Primeiro Projeto: Robô “Flip”
       </p>
       <div class="accordion-panel" id="aba-projeto">
         <img src="imagens/Flip_Real.jpg" alt="Flip Real" class="image-right">
-        <p>Após o término das aulas de capacitação, iniciei meu primeiro projeto oficial...</p>
+        <p>Após o término das aulas de capacitação, iniciei meu primeiro projeto oficial na Tamandutech, trabalhando ao lado da minha líder de projeto, Nicoly Regina Alves Corrêa Anselmi, e do colega Carlos Eduardo Salum Storto. Juntos, projetamos e construímos o robô de combate da categoria fairyweight (150g) “Flip”, um vertical spinner inspirado em um dos maiores campeões da BattleBots, o lendário Bite Force, da equipe norte-americana Aptyx Designs, referência mundial em robustez e desempenho. Sempre admirei a consistência e eficiência desse robô, e buscávamos refletir esses mesmos princípios em nosso projeto.</p>
 
-        <!-- Aba interna -->
+        <!-- ABA INTERNA: Etapa de Desenvolvimento -->
         <p class="subtitle accordion-header" role="button" tabindex="0" aria-expanded="false">
           Etapa de Desenvolvimento
         </p>
         <div class="accordion-panel" id="aba-desenvolvimento">
-          <p>1. Eletrônica:</p>
+          <p>1 - Eletrônica:</p>
           <img src="imagens/Flip_Eletronica.png" alt="Flip Eletronica" class="image-right">
-          <p>Iniciamos o trabalho pela parte eletrônica...</p>
+          <p>Iniciamos o trabalho pela parte eletrônica, buscando um sistema funcional, seguro e eficiente. Utilizamos uma placa controladora Dino V2 da Robocore, dois motores N20 de 1000 rpm para a locomoção e um motor brushless de 15.000 rpm para a arma principal. O controle da arma foi realizado através de um ESC (Electronic Speed Controller), garantindo a proteção do circuito contra sobrecargas. Além disso, implementamos um receptor FlySky para comunicação via rádio e o sistema obrigatório de segurança exigido nas competições: um LED indicador de energia e uma chave geral de desligamento rápido.</p>
           <li><a href="imagens/Flip_Eletronica.pdf" target="_blank" rel="noopener noreferrer">Planta Elétrica Flip</a></li>
-          <p>2. Estrutura e Chassi:</p>
+          <p>2 - Estrutura e Chassi:</p>
           <img src="imagens/Flip_CAD.png" alt="Flip CAD" class="image-right">
-          <p>A construção do chassi foi uma das etapas mais trabalhosas...</p>
-          <p>3. Rodas e Pneus:</p>
-          <p>Optamos por fabricar nossas próprias rodas e pneus...</p>
+          <p>A construção do chassi foi uma das etapas mais trabalhosas e desafiadoras. Produzimos diversas versões e ajustes, até chegarmos a um design otimizado. O chassi foi impresso em 3D com TPU (poliuretano termoplástico), material altamente flexível e recomendado para robôs de combate por sua resistência ao impacto e capacidade de absorção de choques.</p>
+          <p>3 - Rodas e Pneus:</p>
+          <p>Optamos por fabricar nossas próprias rodas e pneus, garantindo personalização total e melhor desempenho. As rodas foram impressas em PETG, um polímero mais rígido e leve, enquanto os pneus foram moldados com cola de poliuretano (PU) em moldes desenvolvidos por nós mesmos. O resultado foi um conjunto resistente, durável e com excelente aderência, essencial em combates intensos.</p>
         </div>
+        <!-- fim aba interna -->
       </div>
 
-      <!-- ABA 3 -->
+      <!-- ABA 3: Primeira Competição (com aba interna "Reflexão e Próximos Passos") -->
       <p class="subtitle accordion-header" role="button" tabindex="0" aria-expanded="false">
         Primeira Competição: RoboChallenger 2025
       </p>
       <div class="accordion-panel" id="aba-competicao">
-        <p>Com o Flip pronto, participamos da nossa primeira competição oficial...</p>
+        <p>Com o Flip pronto, participamos da nossa primeira competição oficial, a RoboChallenger, realizada no Instituto Mauá de Tecnologia, entre os dias 3 e 5 de outubro de 2025.</p>
         <p>Dia 1 – Inspeção Técnica:</p>
-        <p>O primeiro dia foi dedicado à inspeção dos robôs...</p>
+        <p>O primeiro dia foi dedicado à inspeção dos robôs. As equipes apresentaram seus projetos aos juízes, que verificaram os critérios de segurança, peso, integridade elétrica e funcionalidade. O Flip passou por todas as etapas sem nenhuma necessidade de alterações ou ajustes, o que já foi motivo de orgulho e alívio para nós.</p>
         <p>Dia 2 – Lutas Oficiais:</p>
-        <p>Nosso primeiro combate foi contra o robô Quero-Quero...</p>
-        <div class="two-images">
+        <p>Nosso primeiro combate foi contra o robô Quero-Quero, da equipe Phoenix, e vencemos por W.O., avançando automaticamente.</p>
+        <p>Já na segunda luta, enfrentamos o temido Roçadeira, da equipe Device Combate, um poderoso robô de design totalmente original e majoritariamente feito de titânio, o que o deixa praticamente invulnerável, e muito caro também. Ele é o atual líder do ranking nacional e campeão da competição, um robô fantástico e com um projeto praticamente perfeito para a categoria.</p>
+        <p>Não é à toa que o pódio dessa competição ficou com Roçadeira V2 em primeiro, seguido do Roçadeira (original) em segundo, ambos da equipe Device Combate, e em terceiro uma réplica do Roçadeira, o robô Stake - Fair, da equipe WickedBotz. Essa grande dominância deixa claro o quão otimizado e eficiente é o projeto da Device Combate.</p>
+        <p>Como piloto, entrei ciente do desafio. Sabia que sua principal vulnerabilidade eram as rodas expostas, e planejei atacar por esse ponto. Contudo, a alta mobilidade do campeão mostrou que seu único ponto fraco não era nem um pouco fácil de se alcançar e em todas as tentativas de me aproximar dele, ele fugia e me acertava com sua poderosa arma, com isso logo no segundo golpe, a fina lâmina de titânio do Roçadeira atingiu o chassi do Flip, abrindo uma fenda que expôs a bateria e danificou o receptor, resultando em nocaute imediato.</p>
+
+        <div class="two-images" aria-label="Fotos de danos ao Flip">
           <figure>
             <img src="imagens/Chassi_Quebrado.jpg" alt="Chassi quebrado do Flip">
           </figure>
@@ -243,25 +249,35 @@
             <img src="imagens/Receptor_Quebrado.jpg" alt="Receptor danificado do Flip">
           </figure>
         </div>
-        <p>Apesar da derrota, mantivemos a calma...</p>
 
-        <!-- Aba interna -->
+        <p>Apesar da derrota, mantivemos a calma, substituímos as peças danificadas e ajustamos o sistema para o próximo confronto.</p>
+        <p>Na terceira luta, enfrentamos o Lohki, também da equipe Phoenix, um robô com uma construção relativamente simples, tratando-se apenas de uma rampa, mas extremamente ágil, sendo assim capaz de me flanquear e marcar vários pontos no processo. Com maior mobilidade, ele venceu por 24 a 9 pontos. Após a partida, trocamos experiências técnicas e dicas de melhoria com a equipe adversária, um dos aspectos mais valiosos das competições.</p>
+        <p>Com essa derrota, fomos eliminados do torneio, encerrando nossa participação em 12° lugar geral. Apesar do resultado modesto, saímos satisfeitos com o desempenho e, principalmente, com o aprendizado obtido em cada etapa.</p>
+        <p>Dia 3 – Aprendizado e Colaboração:</p>
+        <p>No último dia do evento, não tivemos mais combates, mas aproveitei a oportunidade para interagir com outras equipes, observar de perto os robôs finalistas e aprender novas soluções de design e estratégia. Também ajudei colegas da Tamandutech que ainda estavam competindo, participando do suporte técnico, da substituição de peças e ajustes nos robôs.</p>
+
+        <!-- ABA INTERNA: Reflexão e Próximos Passos -->
         <p class="subtitle accordion-header" role="button" tabindex="0" aria-expanded="false">
           Reflexão e Próximos Passos
         </p>
         <div class="accordion-panel" id="aba-reflexao">
-          <p>Participar da Tamandutech e estrear na RoboChallenger foi uma experiência transformadora...</p>
-          <p>Atualmente, continuo aprimorando o Flip...</p>
-          <p>Nosso objetivo é claro: voltar às arenas mais fortes...</p>
+          <p>Participar da Tamandutech e estrear na RoboChallenger foi uma experiência transformadora. Aprendi não apenas sobre engenharia e robótica, mas também sobre trabalho em equipe, tomada de decisão sob pressão e resiliência diante dos desafios.</p>
+          <p>Atualmente, continuo aprimorando o Flip, com foco em aumentar a durabilidade do chassi, otimizar a arma principal e aprimorar a distribuição de peso, buscando um desempenho mais equilibrado e competitivo.</p>
+          <p>Nosso objetivo é claro: voltar às arenas mais fortes, mais preparados e prontos para enfrentar novamente o lendário Roçadeira, desta vez, em condições de vitória.</p>
         </div>
+        <!-- fim aba interna -->
       </div>
-      <!-- Fim das abas -->
-    </article>
+      <!-- fim ABA 3 -->
 
-    <!-- Link do Notion fora das abas -->
-    <ul class="links">
-      <li><a href="https://www.notion.so/Central-de-Informa-es-8d9fe58961c343d9908b843822e6fd30?p=cfce034e1d4f4d189a8eea4d1f300a2d&pm=c" target="_blank" rel="noopener noreferrer">Notion</a></li>
-    </ul>
+      <!-- Link final, fora das abas -->
+      <ul class="links" style="margin-top: 18px;">
+        <li>
+          <a href="https://www.notion.so/Central-de-Informa-es-8d9fe58961c343d9908b843822e6fd30?p=cfce034e1d4f4d189a8eea4d1f300a2d&pm=c"
+             target="_blank" rel="noopener noreferrer">Notion</a>
+        </li>
+      </ul>
+
+    </article>
 
     <div class="back-button-container">
       <a href="index.html">
@@ -272,25 +288,31 @@
 
   <!-- JS do acordeão -->
   <script>
-    function bindAccordion(header) {
-      const panel = header.nextElementSibling;
-      if (!panel || !panel.classList.contains('accordion-panel')) return;
+    document.addEventListener("DOMContentLoaded", () => {
+      const headers = document.querySelectorAll(".accordion-header");
 
-      const toggle = () => {
-        const expanded = header.getAttribute('aria-expanded') === 'true';
-        header.setAttribute('aria-expanded', String(!expanded));
-        panel.style.display = expanded ? 'none' : 'block';
-      };
+      headers.forEach((header) => {
+        const panel = header.nextElementSibling;
+        if (!panel || !panel.classList.contains("accordion-panel")) return;
 
-      header.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggle();
+        const toggle = () => {
+          const expanded = header.getAttribute("aria-expanded") === "true";
+          header.setAttribute("aria-expanded", String(!expanded));
+        };
+
+        header.addEventListener("click", (e) => {
+          e.stopPropagation(); // evita conflito com abas internas/externas
+          toggle();
+        });
+
+        header.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggle();
+          }
+        });
       });
-      header.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-      });
-    }
-    document.querySelectorAll('.accordion-header').forEach(bindAccordion);
+    });
   </script>
 </body>
 </html>
