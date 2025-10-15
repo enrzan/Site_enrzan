@@ -168,15 +168,14 @@
       height: 60px;
     }
 
-    /* ====== Acordeão (abas retráteis) ====== */
     .accordion-header {
       cursor: pointer;
       user-select: none;
       position: relative;
-      padding-right: 26px; /* espaço para a setinha */
+      padding-right: 26px;
     }
     .accordion-header::after {
-      content: "▸"; /* fechado */
+      content: "▸";
       position: absolute;
       right: 0;
       top: 0;
@@ -184,13 +183,12 @@
       transform: translateY(10%);
     }
     .accordion-header[aria-expanded="true"]::after {
-      content: "▾"; /* aberto */
+      content: "▾";
     }
     .accordion-panel {
       display: none;
       margin-top: 8px;
     }
-    /* (opcional) leve transição quando trocar display via JS com height */
   </style>
 </head>
 
@@ -201,7 +199,6 @@
     </header>
 
     <article class="author-text">
-      <!-- ABA 1: Minha Experiência na Tamandutech -->
       <p class="subtitle accordion-header" role="button" tabindex="0" aria-expanded="false">
         Minha Experiência na Tamandutech
       </p>
@@ -213,7 +210,6 @@
         <p>Logo nas primeiras semanas, participei de uma série de workshops introdutórios, que abordaram temas essenciais como eletrônica básica, mecânica aplicada, controle, programação embarcada e protocolos de segurança em competições. Esses treinamentos foram fundamentais para nos preparar para o ambiente técnico e colaborativo da equipe.</p>
       </div>
 
-      <!-- ABA 2: Meu Primeiro Projeto: Robô “Flip” (com aba interna "Etapa de Desenvolvimento") -->
       <p class="subtitle accordion-header" role="button" tabindex="0" aria-expanded="false">
         Meu Primeiro Projeto: Robô “Flip”
       </p>
@@ -221,7 +217,6 @@
         <img src="imagens/Flip_Real.jpg" alt="Flip Real" class="image-right">
         <p>Após o término das aulas de capacitação, iniciei meu primeiro projeto oficial na Tamandutech, trabalhando ao lado da minha líder de projeto, Nicoly Regina Alves Corrêa Anselmi, e do colega Carlos Eduardo Salum Storto. Juntos, projetamos e construímos o robô de combate da categoria fairyweight (150g) “Flip”, um vertical spinner inspirado em um dos maiores campeões da BattleBots, o lendário Bite Force, da equipe norte-americana Aptyx Designs, referência mundial em robustez e desempenho. Sempre admirei a consistência e eficiência desse robô, e buscávamos refletir esses mesmos princípios em nosso projeto.</p>
 
-        <!-- ABA INTERNA: Etapa de Desenvolvimento -->
         <p class="subtitle accordion-header" role="button" tabindex="0" aria-expanded="false">
           Etapa de Desenvolvimento
         </p>
@@ -236,10 +231,8 @@
           <p>3. Rodas e Pneus:</p>
           <p>Optamos por fabricar nossas próprias rodas e pneus, garantindo personalização total e melhor desempenho. As rodas foram impressas em PETG, um polímero mais rígido e leve, enquanto os pneus foram moldados com cola de poliuretano (PU) em moldes desenvolvidos por nós mesmos. O resultado foi um conjunto resistente, durável e com excelente aderência, essencial em combates intensos.</p>
         </div>
-        <!-- fim aba interna -->
       </div>
 
-      <!-- ABA 3: Primeira Competição (com aba interna "Reflexão e Próximos Passos") -->
       <p class="subtitle accordion-header" role="button" tabindex="0" aria-expanded="false">
         Primeira Competição: RoboChallenger 2025
       </p>
@@ -268,7 +261,6 @@
         <p>Dia 3 – Aprendizado e Colaboração:</p>
         <p>No último dia do evento, não tivemos mais combates, mas aproveitei a oportunidade para interagir com outras equipes, observar de perto os robôs finalistas e aprender novas soluções de design e estratégia. Também ajudei colegas da Tamandutech que ainda estavam competindo, participando do suporte técnico, da substituição de peças e ajustes nos robôs.</p>
 
-        <!-- ABA INTERNA: Reflexão e Próximos Passos -->
         <p class="subtitle accordion-header" role="button" tabindex="0" aria-expanded="false">
           Reflexão e Próximos Passos
         </p>
@@ -277,13 +269,11 @@
           <p>Atualmente, continuo aprimorando o Flip, com foco em aumentar a durabilidade do chassi, otimizar a arma principal e aprimorar a distribuição de peso, buscando um desempenho mais equilibrado e competitivo.</p>
           <p>Nosso objetivo é claro: voltar às arenas mais fortes, mais preparados e prontos para enfrentar novamente o lendário Roçadeira, desta vez, em condições de vitória.</p>
         </div>
-        <!-- fim aba interna -->
 
         <ul class="links">
           <li><a href="https://www.notion.so/Central-de-Informa-es-8d9fe58961c343d9908b843822e6fd30?p=cfce034e1d4f4d189a8eea4d1f300a2d&pm=c" target="_blank" rel="noopener noreferrer">Notion</a></li>
         </ul>
       </div>
-      <!-- fim ABA 3 -->
 
     </article>
 
@@ -294,9 +284,7 @@
     </div>
   </div>
 
-  <!-- JS do acordeão -->
   <script>
-    // Função para ligar um header ao seu painel seguinte
     function bindAccordion(header) {
       const panel = header.nextElementSibling;
       if (!panel || !panel.classList.contains('accordion-panel')) return;
@@ -308,7 +296,7 @@
       };
 
       header.addEventListener('click', (e) => {
-        e.stopPropagation(); // evita conflito com abas externas
+        e.stopPropagation();
         toggle();
       });
       header.addEventListener('keydown', (e) => {
@@ -316,7 +304,6 @@
       });
     }
 
-    // Liga todas as abas (inclui as internas)
     document.querySelectorAll('.accordion-header').forEach(bindAccordion);
   </script>
 </body>
