@@ -1,125 +1,1798 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <link rel="icon" type="image/png" href="imagens/icon.png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>enrzan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Portfólio acadêmico e tecnológico de Enrzan, reunindo projetos, formação, certificações e estudos em programação, Arduino, CAD/CAM e robótica."
+  >
+
+  <title>ENRZAN | Portfólio Acadêmico e Tecnológico</title>
+
+  <link rel="icon" type="image/png" href="imagens/Logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+    :root {
+      --preto: #050806;
+      --preto-claro: #09100b;
+      --painel: #0d1710;
+      --painel-claro: #122017;
+      --painel-hover: #17291d;
+
+      --verde: #4bd66b;
+      --verde-claro: #8beb9e;
+      --verde-escuro: #23933f;
+      --verde-suave: rgba(75, 214, 107, 0.12);
+      --verde-borda: rgba(75, 214, 107, 0.28);
+
+      --branco: #f5f8f5;
+      --texto: #e6ede7;
+      --texto-secundario: #9eaaa0;
+      --borda: rgba(255, 255, 255, 0.09);
+
+      --sombra-pequena: 0 10px 30px rgba(0, 0, 0, 0.24);
+      --sombra-media: 0 18px 45px rgba(0, 0, 0, 0.35);
+      --sombra-verde: 0 16px 40px rgba(38, 169, 70, 0.18);
+
+      --largura-maxima: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 125px;
+    }
+
     body {
-      background-color: #007f00;
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      min-height: 100vh;
+      color: var(--texto);
+      background:
+        radial-gradient(
+          circle at 10% 5%,
+          rgba(75, 214, 107, 0.09),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 30%,
+          rgba(75, 214, 107, 0.05),
+          transparent 24%
+        ),
+        var(--preto);
+      font-family: "Inter", Arial, sans-serif;
     }
 
-    main {
-      background-color: #3ca240;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-      box-shadow: 0 0 40px #003300;
+    body.menu-open {
+      overflow: hidden;
     }
 
-    .titulo-enrzan {
-      color: black;
-      text-shadow: 
-        -1px -1px 0 green,  
-         1px -1px 0 green,
-        -1px  1px 0 green,
-         1px  1px 0 green;
-      padding: 8px;
-      text-align: center;
-      font-size: 3em;
-      font-weight: bold;
-      border: 5px solid green;
-      background-color: rgba(0, 0, 0, 1);
-      margin: 20px 0;
-    }
-
-    .imagem-central {
+    img {
       display: block;
-      margin: 0 auto 20px auto;
-      border: 5px solid green;
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      object-position: center;
-      box-sizing: border-box;
+      max-width: 100%;
     }
 
-    .container-article {
-      background-color: #5cb85c;
-      width: 100%;
-      margin: 20px 0;
-      padding: 20px;
-      box-shadow: 0 0 10px black;
-      font-size: 1.2em;
-      line-height: 1.6;
-      text-align: justify;
-      border: 5px solid green;
-      box-sizing: border-box;
+    a {
+      color: inherit;
     }
 
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-      margin: 0;
+    button,
+    input {
+      font: inherit;
     }
 
-    li {
-      margin: 15px 0;
+    button {
+      cursor: pointer;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    .container {
+      width: min(var(--largura-maxima), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 9999;
+      padding: 12px 18px;
+      color: var(--preto);
+      background: var(--verde);
+      border-radius: 10px;
+      font-weight: 800;
+      text-decoration: none;
+      transform: translateY(-160%);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--verde-claro);
+      outline-offset: 4px;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 21px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: #041006;
+      background: linear-gradient(
+        135deg,
+        var(--verde),
+        var(--verde-claro)
+      );
+      box-shadow: var(--sombra-verde);
+    }
+
+    .button-primary:hover {
+      box-shadow: 0 18px 45px rgba(75, 214, 107, 0.27);
+    }
+
+    .button-secondary {
+      color: var(--texto);
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--verde-borda);
+    }
+
+    .button-secondary:hover {
+      color: var(--verde-claro);
+      background: var(--verde-suave);
+      border-color: var(--verde);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 8, 6, 0.9);
+      border-bottom: 1px solid var(--borda);
+      box-shadow: 0 7px 30px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-main {
+      min-height: 76px;
+      display: grid;
+      grid-template-columns: auto minmax(240px, 1fr) auto;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      text-decoration: none;
+    }
+
+    .brand-symbol {
       position: relative;
-      padding-left: 25px;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      color: var(--preto);
+      background: linear-gradient(
+        135deg,
+        var(--verde),
+        var(--verde-claro)
+      );
+      border-radius: 13px;
+      box-shadow: 0 10px 25px rgba(75, 214, 107, 0.2);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
     }
 
-    li::before {
-      content: "•";
+    .brand-symbol::after {
+      content: "";
       position: absolute;
-      left: 0;
-      color: black;
-      font-size: 1.5em;
+      inset: -4px;
+      z-index: -1;
+      border: 1px solid var(--verde-borda);
+      border-radius: 16px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
       line-height: 1;
     }
 
-    li a {
-      color: black;
-      text-decoration: none;
-      text-shadow: 
-        -1px -1px 0 green,  
-         1px -1px 0 green,
-        -1px  1px 0 green,
-         1px  1px 0 green;
-      font-size: 1.5em;
-      font-weight: bold;
+    .brand-name {
+      color: var(--branco);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
     }
 
-    li a:hover {
-      text-decoration: underline;
-      text-decoration-thickness: 3px;
+    .brand-description {
+      margin-top: 5px;
+      color: var(--texto-secundario);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .header-search {
+      width: 100%;
+      max-width: 520px;
+      justify-self: center;
+    }
+
+    .search-form {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      width: 19px;
+      height: 19px;
+      color: var(--verde);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      min-height: 46px;
+      padding: 11px 52px 11px 46px;
+      color: var(--texto);
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      outline: none;
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .search-input::placeholder {
+      color: #7f8b82;
+    }
+
+    .search-input:focus {
+      background: rgba(255, 255, 255, 0.065);
+      border-color: var(--verde);
+      box-shadow: 0 0 0 4px rgba(75, 214, 107, 0.09);
+    }
+
+    .search-button {
+      position: absolute;
+      right: 5px;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      color: var(--preto);
+      background: var(--verde);
+      border: 0;
+      border-radius: 9px;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .search-button:hover {
+      background: var(--verde-claro);
+      transform: scale(1.04);
+    }
+
+    .search-button svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .desktop-navigation {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .navigation-link {
+      padding: 10px 12px;
+      color: var(--texto-secundario);
+      border-radius: 9px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .navigation-link:hover,
+    .navigation-link.active {
+      color: var(--verde-claro);
+      background: var(--verde-suave);
+    }
+
+    .menu-button {
+      display: none;
+      width: 44px;
+      height: 44px;
+      color: var(--texto);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--borda);
+      border-radius: 11px;
+    }
+
+    .menu-lines {
+      width: 21px;
+      margin-inline: auto;
+    }
+
+    .menu-lines span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin: 5px 0;
+      background: currentColor;
+      border-radius: 10px;
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    }
+
+    .menu-button[aria-expanded="true"] .menu-lines span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-button[aria-expanded="true"] .menu-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-button[aria-expanded="true"] .menu-lines span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-navigation {
+      display: none;
+      border-top: 1px solid var(--borda);
+    }
+
+    .mobile-navigation-list {
+      display: grid;
+      gap: 6px;
+      margin: 0;
+      padding: 14px 20px 20px;
+      list-style: none;
+    }
+
+    .mobile-navigation-list a {
+      display: block;
+      padding: 12px 14px;
+      color: var(--texto-secundario);
+      background: rgba(255, 255, 255, 0.035);
+      border-radius: 9px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .mobile-navigation-list a:hover {
+      color: var(--verde-claro);
+      background: var(--verde-suave);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(70px, 10vw, 125px) 0 80px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      width: 620px;
+      height: 620px;
+      background: radial-gradient(
+        circle,
+        rgba(75, 214, 107, 0.07),
+        transparent 68%
+      );
+      transform: translateX(-10%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(350px, 0.92fr);
+      align-items: center;
+      gap: clamp(45px, 8vw, 100px);
+    }
+
+    .hero-label {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 21px;
+      padding: 8px 13px;
+      color: var(--verde-claro);
+      background: var(--verde-suave);
+      border: 1px solid var(--verde-borda);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--verde);
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(75, 214, 107, 0.1);
+    }
+
+    .hero-title {
+      max-width: 760px;
+      margin: 0;
+      color: var(--branco);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 700;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-title span {
+      display: block;
+      color: var(--verde);
+    }
+
+    .hero-description {
+      max-width: 680px;
+      margin: 26px 0 0;
+      color: var(--texto-secundario);
+      font-size: clamp(1.02rem, 2vw, 1.15rem);
+      line-height: 1.78;
+    }
+
+    .hero-description strong {
+      color: var(--texto);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 32px;
+    }
+
+    .hero-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 29px;
+    }
+
+    .hero-topic {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--texto-secundario);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .hero-topic::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: var(--verde);
+      border-radius: 50%;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .visual-frame {
+      position: relative;
+      overflow: hidden;
+      padding: 9px;
+      background: linear-gradient(
+        145deg,
+        rgba(75, 214, 107, 0.28),
+        rgba(255, 255, 255, 0.04)
+      );
+      border: 1px solid var(--verde-borda);
+      border-radius: 27px;
+      box-shadow: var(--sombra-media);
+    }
+
+    .visual-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        180deg,
+        transparent 42%,
+        rgba(5, 8, 6, 0.88) 100%
+      );
+      pointer-events: none;
+    }
+
+    .visual-image {
+      width: 100%;
+      min-height: 410px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 20px;
+      filter:
+        saturate(0.82)
+        contrast(1.08)
+        brightness(0.78);
+    }
+
+    .visual-content {
+      position: absolute;
+      right: 30px;
+      bottom: 29px;
+      left: 30px;
+      z-index: 2;
+    }
+
+    .visual-kicker {
+      margin: 0 0 7px;
+      color: var(--verde-claro);
+      font-size: 0.77rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .visual-title {
+      margin: 0;
+      color: var(--branco);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.65rem;
+      line-height: 1.15;
+    }
+
+    .visual-decoration {
+      position: absolute;
+      top: -22px;
+      right: -22px;
+      width: 88px;
+      height: 88px;
+      display: grid;
+      place-items: center;
+      color: var(--preto);
+      background: var(--verde);
+      border: 8px solid var(--preto);
+      border-radius: 24px;
+      box-shadow: var(--sombra-verde);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      transform: rotate(8deg);
+    }
+
+    .about-section {
+      padding: 0 0 85px;
+    }
+
+    .about-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 26px;
+      padding: clamp(28px, 5vw, 48px);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(75, 214, 107, 0.07),
+          rgba(255, 255, 255, 0.02)
+        ),
+        var(--painel);
+      border: 1px solid var(--verde-borda);
+      border-radius: 23px;
+      box-shadow: var(--sombra-pequena);
+    }
+
+    .about-number {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      color: var(--preto);
+      background: var(--verde);
+      border-radius: 17px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .about-content h2 {
+      margin: 0;
+      color: var(--branco);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.1;
+    }
+
+    .about-content p {
+      max-width: 880px;
+      margin: 15px 0 0;
+      color: var(--texto-secundario);
+      font-size: 1.02rem;
+      line-height: 1.78;
+    }
+
+    .areas-section {
+      padding: 85px 0 105px;
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(75, 214, 107, 0.025),
+          transparent
+        );
+      border-top: 1px solid var(--borda);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 37px;
+    }
+
+    .section-label {
+      display: block;
+      margin-bottom: 11px;
+      color: var(--verde);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0;
+      color: var(--branco);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.45rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .section-description {
+      max-width: 600px;
+      margin: 15px 0 0;
+      color: var(--texto-secundario);
+      line-height: 1.7;
+    }
+
+    .results-status {
+      flex: 0 0 auto;
+      margin: 0 0 5px;
+      padding: 8px 12px;
+      color: var(--verde-claro);
+      background: var(--verde-suave);
+      border: 1px solid var(--verde-borda);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .area-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 255px;
+      display: flex;
+      flex-direction: column;
+      padding: 25px;
+      color: var(--texto);
+      background: var(--painel);
+      border: 1px solid var(--borda);
+      border-radius: 19px;
+      text-decoration: none;
+      box-shadow: var(--sombra-pequena);
+      transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .area-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        var(--verde-escuro),
+        var(--verde),
+        var(--verde-claro)
+      );
+      transform: scaleX(0.35);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .area-card:hover {
+      background: var(--painel-hover);
+      border-color: var(--verde-borda);
+      box-shadow: var(--sombra-media);
+      transform: translateY(-6px);
+    }
+
+    .area-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .area-card-number {
+      color: var(--verde);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+    }
+
+    .area-card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin-top: 24px;
+      color: var(--verde-claro);
+      background: var(--verde-suave);
+      border: 1px solid var(--verde-borda);
+      border-radius: 13px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .area-card h3 {
+      margin: 21px 0 0;
+      color: var(--branco);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.3rem;
+      line-height: 1.2;
+    }
+
+    .area-card p {
+      flex: 1;
+      margin: 11px 0 22px;
+      color: var(--texto-secundario);
+      font-size: 0.91rem;
+      line-height: 1.65;
+    }
+
+    .area-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--verde-claro);
+      font-size: 0.87rem;
+      font-weight: 700;
+    }
+
+    .area-card-link span {
+      transition: transform 0.2s ease;
+    }
+
+    .area-card:hover .area-card-link span {
+      transform: translateX(5px);
+    }
+
+    .empty-state {
+      margin-top: 22px;
+      padding: 30px;
+      color: var(--texto-secundario);
+      background: var(--painel);
+      border: 1px dashed var(--verde-borda);
+      border-radius: 17px;
+      text-align: center;
+    }
+
+    .empty-state strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--branco);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.1rem;
+    }
+
+    .closing-section {
+      padding: 10px 0 95px;
+    }
+
+    .closing-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(35px, 6vw, 65px);
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(75, 214, 107, 0.15),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          var(--painel-claro),
+          var(--painel)
+        );
+      border: 1px solid var(--verde-borda);
+      border-radius: 24px;
+      box-shadow: var(--sombra-media);
+    }
+
+    .closing-card h2 {
+      max-width: 760px;
+      margin: 0;
+      color: var(--branco);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .closing-card p {
+      max-width: 680px;
+      margin: 18px 0 0;
+      color: var(--texto-secundario);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    .closing-card .button {
+      margin-top: 27px;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--borda);
+      background: #030504;
+    }
+
+    .footer-main {
+      min-height: 115px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-symbol {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      color: var(--preto);
+      background: var(--verde);
+      border-radius: 11px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 800;
+    }
+
+    .footer-brand strong {
+      display: block;
+      color: var(--branco);
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-brand span {
+      display: block;
+      margin-top: 3px;
+      color: var(--texto-secundario);
+      font-size: 0.74rem;
+    }
+
+    .footer-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
+    .footer-navigation a {
+      color: var(--texto-secundario);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .footer-navigation a:hover {
+      color: var(--verde-claro);
+    }
+
+    .footer-bottom {
+      padding: 18px 0;
+      color: #758078;
+      border-top: 1px solid var(--borda);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 900;
+      width: 47px;
+      height: 47px;
+      display: grid;
+      place-items: center;
+      color: var(--preto);
+      background: var(--verde);
+      border: 0;
+      border-radius: 13px;
+      box-shadow: var(--sombra-verde);
+      font-size: 1.1rem;
+      font-weight: 800;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--verde-claro);
+    }
+
+    @media (max-width: 1050px) {
+      .header-main {
+        grid-template-columns: auto 1fr auto;
+        gap: 18px;
+      }
+
+      .desktop-navigation {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-label {
+        margin-inline: auto;
+      }
+
+      .hero-title,
+      .hero-description {
+        margin-inline: auto;
+      }
+
+      .hero-actions,
+      .hero-topics {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        width: min(700px, 100%);
+        margin-inline: auto;
+      }
+
+      .areas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      html {
+        scroll-padding-top: 160px;
+      }
+
+      .container {
+        width: min(var(--largura-maxima), calc(100% - 28px));
+      }
+
+      .header-main {
+        grid-template-columns: 1fr auto;
+        padding: 12px 0;
+      }
+
+      .header-search {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        max-width: none;
+      }
+
+      .mobile-navigation.open {
+        display: block;
+      }
+
+      .brand-symbol {
+        width: 42px;
+        height: 42px;
+      }
+
+      .brand-description {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .hero-title {
+        font-size: clamp(2.65rem, 13vw, 4.3rem);
+      }
+
+      .visual-image {
+        min-height: 340px;
+      }
+
+      .about-card {
+        grid-template-columns: 1fr;
+      }
+
+      .about-number {
+        width: 52px;
+        height: 52px;
+      }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .results-status {
+        margin: 0;
+      }
+
+      .footer-main {
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px 0;
+        text-align: center;
+      }
+
+      .footer-navigation {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .hero-topics {
+        gap: 8px 16px;
+      }
+
+      .visual-decoration {
+        top: -16px;
+        right: -5px;
+        width: 72px;
+        height: 72px;
+        border-width: 6px;
+        font-size: 1.2rem;
+      }
+
+      .visual-content {
+        right: 22px;
+        bottom: 22px;
+        left: 22px;
+      }
+
+      .areas-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .area-card {
+        min-height: 235px;
+      }
+
+      .closing-card .button {
+        width: 100%;
+      }
+
+      .back-to-top {
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
-<body>
-  <main>
-    <div class="titulo-enrzan">enrzan</div>
 
-    <img src="imagens/mother_circuit.png" alt="Imagem central" class="imagem-central" />
+<body id="topo">
+  <a class="skip-link" href="#conteudo-principal">
+    Pular para o conteúdo principal
+  </a>
 
-    <article class="container-article">
-      <p>Este site foi desenvolvido como uma forma de estudar e praticar a linguagem de programação HTML e CSS, aproveitando também para criar um repositório das principais conquistas e progressos pessoais. A proposta é utilizá-lo como complemento ao currículo tradicional, reunindo experiências e aprendizados adquiridos ao longo da trajetória acadêmica e profissional.</p>
-      <p>A seguir, apresento uma série de tópicos que descrevem de maneira mais detalhada minha caminhada e evolução pessoal.</p>
-    </article>
+  <header class="site-header">
+    <div class="container header-main">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Página inicial do portfólio ENRZAN"
+      >
+        <span class="brand-symbol" aria-hidden="true">E</span>
 
-    <ul>
-      <li><a href="index_apresentacao.html">Apresentação do Autor</a></li>
-      <li><a href="index_arduino.html">Arduino</a></li>
-      <li><a href="index_CADCAM.html">CAD/CAM</a></li>
-      <li><a href="index_certificados.html">Certificados e Premiações</a></li>
-      <li><a href="index_formacao.html">Formação Acadêmica/Titulação</a></li>
-      <li><a href="index_python.html">Python</a></li>
-      <li><a href="index_robotica.html">Robótica</a></li>
-    </ul>
+        <span class="brand-text">
+          <span class="brand-name">ENRZAN</span>
+          <span class="brand-description">
+            Portfólio acadêmico e tecnológico
+          </span>
+        </span>
+      </a>
+
+      <div class="header-search">
+        <form class="search-form" id="searchForm" role="search">
+          <svg
+            class="search-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-3.7-3.7"></path>
+          </svg>
+
+          <input
+            class="search-input"
+            id="siteSearch"
+            type="search"
+            aria-label="Pesquisar áreas do portfólio"
+            placeholder="Pesquisar Arduino, Python, robótica..."
+            autocomplete="off"
+          >
+
+          <button
+            class="search-button"
+            type="submit"
+            aria-label="Pesquisar"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              aria-hidden="true"
+            >
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <nav
+        class="desktop-navigation"
+        aria-label="Navegação principal"
+      >
+        <a class="navigation-link active" href="#topo">
+          Início
+        </a>
+
+        <a class="navigation-link" href="#sobre">
+          Sobre
+        </a>
+
+        <a class="navigation-link" href="#areas">
+          Áreas
+        </a>
+      </nav>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Abrir menu"
+        aria-controls="mobileNavigation"
+        aria-expanded="false"
+      >
+        <span class="menu-lines" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+
+    <nav
+      class="mobile-navigation"
+      id="mobileNavigation"
+      aria-label="Navegação para dispositivos móveis"
+    >
+      <ul class="mobile-navigation-list">
+        <li><a href="#topo">Início</a></li>
+        <li><a href="#sobre">Sobre o portfólio</a></li>
+        <li><a href="#areas">Áreas e conteúdos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-label">
+            <span class="status-dot" aria-hidden="true"></span>
+            Portfólio em desenvolvimento contínuo
+          </p>
+
+          <h1 class="hero-title">
+            Tecnologia, engenharia
+            <span>e evolução constante.</span>
+          </h1>
+
+          <p class="hero-description">
+            Este espaço reúne minha formação, projetos e aprendizados em
+            <strong>programação, automação, modelagem e robótica</strong>.
+            O site também faz parte do meu processo de estudo em HTML e CSS,
+            funcionando como complemento ao currículo tradicional.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#areas">
+              Explorar o portfólio
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="index_apresentacao.html"
+            >
+              Apresentação do autor
+            </a>
+          </div>
+
+          <div class="hero-topics" aria-label="Principais temas">
+            <span class="hero-topic">Programação</span>
+            <span class="hero-topic">Engenharia</span>
+            <span class="hero-topic">Automação</span>
+            <span class="hero-topic">Robótica</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-frame">
+            <img
+              class="visual-image"
+              src="imagens/mother_circuit.png"
+              alt="Circuito eletrônico representando tecnologia e engenharia"
+            >
+
+            <div class="visual-content">
+              <p class="visual-kicker">
+                Portfólio pessoal
+              </p>
+
+              <h2 class="visual-title">
+                Aprendizado registrado por meio de projetos e experiências.
+              </h2>
+            </div>
+          </div>
+
+          <div class="visual-decoration" aria-hidden="true">
+            01
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="sobre">
+      <div class="container">
+        <article class="about-card">
+          <div class="about-number" aria-hidden="true">
+            02
+          </div>
+
+          <div class="about-content">
+            <h2>Sobre este portfólio</h2>
+
+            <p>
+              Este site foi desenvolvido para praticar HTML e CSS e,
+              simultaneamente, organizar as principais conquistas, experiências
+              e progressos da minha trajetória acadêmica e profissional.
+              A proposta é manter um registro acessível dos conhecimentos
+              adquiridos e dos projetos desenvolvidos ao longo do tempo.
+            </p>
+
+            <p>
+              As áreas apresentadas a seguir permitem acompanhar de maneira
+              mais organizada minha evolução em diferentes campos da
+              tecnologia e da engenharia.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="areas-section" id="areas">
+      <div class="container">
+        <header class="section-header">
+          <div>
+            <span class="section-label">
+              Conteúdos do portfólio
+            </span>
+
+            <h2 class="section-title">
+              Áreas de estudo e desenvolvimento
+            </h2>
+
+            <p class="section-description">
+              Selecione uma área para acessar os projetos, registros e
+              informações disponíveis. A pesquisa acima filtra estes conteúdos.
+            </p>
+          </div>
+
+          <p
+            class="results-status"
+            id="resultsStatus"
+            aria-live="polite"
+          >
+            7 áreas disponíveis
+          </p>
+        </header>
+
+        <div class="areas-grid" id="areasGrid">
+          <a
+            class="area-card"
+            href="index_apresentacao.html"
+            data-search="apresentação autor sobre perfil trajetória pessoal"
+          >
+            <span class="area-card-number">01 / PERFIL</span>
+
+            <span class="area-card-icon" aria-hidden="true">
+              ID
+            </span>
+
+            <h3>Apresentação do Autor</h3>
+
+            <p>
+              Informações pessoais, interesses, trajetória e objetivos
+              relacionados à formação e ao desenvolvimento profissional.
+            </p>
+
+            <span class="area-card-link">
+              Acessar apresentação
+              <span aria-hidden="true">→</span>
+            </span>
+          </a>
+
+          <a
+            class="area-card"
+            href="index_arduino.html"
+            data-search="arduino eletrônica automação microcontrolador projetos"
+          >
+            <span class="area-card-number">02 / AUTOMAÇÃO</span>
+
+            <span class="area-card-icon" aria-hidden="true">
+              AR
+            </span>
+
+            <h3>Arduino</h3>
+
+            <p>
+              Estudos e projetos relacionados à eletrônica, programação de
+              microcontroladores e desenvolvimento de sistemas automatizados.
+            </p>
+
+            <span class="area-card-link">
+              Acessar conteúdo
+              <span aria-hidden="true">→</span>
+            </span>
+          </a>
+
+          <a
+            class="area-card"
+            href="index_CADCAM.html"
+            data-search="cad cam modelagem fabricação projeto desenho impressão 3d"
+          >
+            <span class="area-card-number">03 / PROJETO</span>
+
+            <span class="area-card-icon" aria-hidden="true">
+              3D
+            </span>
+
+            <h3>CAD/CAM</h3>
+
+            <p>
+              Trabalhos relacionados à modelagem computacional, projeto de
+              componentes e processos de fabricação assistidos por computador.
+            </p>
+
+            <span class="area-card-link">
+              Acessar conteúdo
+              <span aria-hidden="true">→</span>
+            </span>
+          </a>
+
+          <a
+            class="area-card"
+            href="index_certificados.html"
+            data-search="certificados premiações cursos conquistas reconhecimento"
+          >
+            <span class="area-card-number">04 / CONQUISTAS</span>
+
+            <span class="area-card-icon" aria-hidden="true">
+              CP
+            </span>
+
+            <h3>Certificados e Premiações</h3>
+
+            <p>
+              Registro de cursos, atividades complementares, certificados,
+              reconhecimentos e demais conquistas acadêmicas.
+            </p>
+
+            <span class="area-card-link">
+              Visualizar registros
+              <span aria-hidden="true">→</span>
+            </span>
+          </a>
+
+          <a
+            class="area-card"
+            href="index_formacao.html"
+            data-search="formação acadêmica titulação universidade graduação estudos"
+          >
+            <span class="area-card-number">05 / FORMAÇÃO</span>
+
+            <span class="area-card-icon" aria-hidden="true">
+              FA
+            </span>
+
+            <h3>Formação Acadêmica</h3>
+
+            <p>
+              Informações sobre a trajetória educacional, cursos, titulações
+              e etapas da formação acadêmica.
+            </p>
+
+            <span class="area-card-link">
+              Consultar formação
+              <span aria-hidden="true">→</span>
+            </span>
+          </a>
+
+          <a
+            class="area-card"
+            href="index_python.html"
+            data-search="python programação código software lógica projetos"
+          >
+            <span class="area-card-number">06 / PROGRAMAÇÃO</span>
+
+            <span class="area-card-icon" aria-hidden="true">
+              PY
+            </span>
+
+            <h3>Python</h3>
+
+            <p>
+              Exercícios, estudos e projetos desenvolvidos com Python,
+              incluindo lógica de programação e aplicações práticas.
+            </p>
+
+            <span class="area-card-link">
+              Acessar conteúdo
+              <span aria-hidden="true">→</span>
+            </span>
+          </a>
+
+          <a
+            class="area-card"
+            href="index_robotica.html"
+            data-search="robótica robos sensores motores eletrônica programação"
+          >
+            <span class="area-card-number">07 / INTEGRAÇÃO</span>
+
+            <span class="area-card-icon" aria-hidden="true">
+              RB
+            </span>
+
+            <h3>Robótica</h3>
+
+            <p>
+              Projetos que integram programação, eletrônica, sensores,
+              mecanismos e outras tecnologias aplicadas à robótica.
+            </p>
+
+            <span class="area-card-link">
+              Acessar conteúdo
+              <span aria-hidden="true">→</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <strong>Nenhuma área foi encontrada.</strong>
+          Tente pesquisar uma palavra diferente, como Python, Arduino,
+          formação ou robótica.
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <div class="container">
+        <div class="closing-card">
+          <span class="section-label">
+            Ponto de partida
+          </span>
+
+          <h2>
+            Conheça minha trajetória e os objetivos deste portfólio.
+          </h2>
+
+          <p>
+            A apresentação reúne informações sobre o autor, os interesses
+            que orientam este projeto e a proposta de registrar o
+            desenvolvimento acadêmico e tecnológico ao longo do tempo.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="index_apresentacao.html"
+          >
+            Acessar apresentação
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand">
+        <span class="footer-symbol" aria-hidden="true">
+          E
+        </span>
+
+        <div>
+          <strong>ENRZAN</strong>
+          <span>Portfólio acadêmico e tecnológico</span>
+        </div>
+      </div>
+
+      <nav
+        class="footer-navigation"
+        aria-label="Navegação do rodapé"
+      >
+        <a href="#topo">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#areas">Áreas</a>
+        <a href="index_apresentacao.html">Apresentação</a>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="currentYear"></span> ENRZAN. Portfólio pessoal.
+    </div>
+  </footer>
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Voltar ao topo"
+  >
+    ↑
+  </button>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const mobileNavigation = document.getElementById("mobileNavigation");
+    const mobileLinks = mobileNavigation.querySelectorAll("a");
+
+    function closeMenu() {
+      mobileNavigation.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Abrir menu");
+      document.body.classList.remove("menu-open");
+    }
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = mobileNavigation.classList.toggle("open");
+
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Fechar menu" : "Abrir menu"
+      );
+
+      document.body.classList.toggle("menu-open", isOpen);
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1050) {
+        closeMenu();
+      }
+    });
+
+    const searchForm = document.getElementById("searchForm");
+    const searchInput = document.getElementById("siteSearch");
+    const areaCards = [...document.querySelectorAll(".area-card")];
+    const resultsStatus = document.getElementById("resultsStatus");
+    const emptyState = document.getElementById("emptyState");
+
+    function normalizeText(text) {
+      return text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+    }
+
+    function filterAreas() {
+      const searchTerm = normalizeText(searchInput.value);
+      let visibleCards = 0;
+
+      areaCards.forEach(card => {
+        const searchableContent = normalizeText(
+          `${card.dataset.search || ""} ${card.textContent}`
+        );
+
+        const shouldShow =
+          searchTerm === "" ||
+          searchableContent.includes(searchTerm);
+
+        card.hidden = !shouldShow;
+
+        if (shouldShow) {
+          visibleCards++;
+        }
+      });
+
+      resultsStatus.textContent =
+        visibleCards === 1
+          ? "1 área disponível"
+          : `${visibleCards} áreas disponíveis`;
+
+      emptyState.hidden = visibleCards !== 0;
+    }
+
+    searchForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      filterAreas();
+
+      document.getElementById("areas").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+
+    searchInput.addEventListener("input", filterAreas);
+
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        backToTop.classList.toggle(
+          "visible",
+          window.scrollY > 600
+        );
+      },
+      { passive: true }
+    );
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+    filterAreas();
+  </script>
 </body>
 </html>
