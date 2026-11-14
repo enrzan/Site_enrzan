@@ -1054,6 +1054,224 @@
       transform: translateX(5px);
     }
 
+
+    .research-card {
+      padding: clamp(24px, 4vw, 38px);
+      background:
+        radial-gradient(
+          circle at 95% 0%,
+          rgba(75, 214, 107, 0.12),
+          transparent 34%
+        ),
+        var(--painel);
+      border: 1px solid var(--verde-borda);
+      border-radius: 22px;
+      box-shadow: var(--sombra-media);
+    }
+
+    .research-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--verde-claro);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .research-card h3 {
+      margin: 12px 0 0;
+      color: var(--branco);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      line-height: 1.2;
+    }
+
+    .research-copy {
+      max-width: 900px;
+      margin: 15px 0 0;
+      color: var(--texto-secundario);
+      font-size: 0.96rem;
+      line-height: 1.75;
+    }
+
+    .research-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .research-meta span {
+      padding: 8px 11px;
+      color: var(--texto);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--borda);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 650;
+    }
+
+    .research-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+      margin-top: 25px;
+    }
+
+    .research-metric {
+      padding: 17px;
+      background: rgba(5, 8, 6, 0.45);
+      border: 1px solid var(--borda);
+      border-radius: 15px;
+    }
+
+    .research-metric strong {
+      display: block;
+      color: var(--verde);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.7rem;
+      line-height: 1;
+    }
+
+    .research-metric span {
+      display: block;
+      margin-top: 8px;
+      color: var(--texto-secundario);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .research-award {
+      display: grid;
+      grid-template-columns: 76px minmax(0, 1fr);
+      align-items: center;
+      gap: 18px;
+      margin-top: 22px;
+      padding: 19px;
+      background: var(--verde-suave);
+      border: 1px solid var(--verde-borda);
+      border-radius: 16px;
+    }
+
+    .research-award-number {
+      width: 70px;
+      height: 70px;
+      display: grid;
+      place-items: center;
+      color: var(--preto);
+      background: linear-gradient(135deg, var(--verde), var(--verde-claro));
+      border-radius: 18px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .research-award strong {
+      display: block;
+      color: var(--branco);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.08rem;
+    }
+
+    .research-award p {
+      margin: 6px 0 0;
+      color: var(--texto-secundario);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    .research-subheading {
+      margin: 34px 0 15px;
+      color: var(--branco);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.28rem;
+    }
+
+    .research-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .research-figure {
+      overflow: hidden;
+      margin: 0;
+      padding: 10px;
+      background: rgba(5, 8, 6, 0.48);
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+    }
+
+    .research-figure img {
+      width: 100%;
+      height: 320px;
+      object-fit: contain;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 10px;
+    }
+
+    .research-figure figcaption {
+      padding: 11px 4px 3px;
+      color: var(--texto-secundario);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .research-files {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .research-file {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 76px;
+      padding: 14px;
+      color: var(--texto);
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid var(--borda);
+      border-radius: 14px;
+      text-decoration: none;
+      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .research-file:hover {
+      background: var(--verde-suave);
+      border-color: var(--verde);
+      transform: translateY(-2px);
+    }
+
+    .research-file-mark {
+      flex: 0 0 auto;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      color: var(--preto);
+      background: var(--verde);
+      border-radius: 11px;
+      font-size: 0.65rem;
+      font-weight: 850;
+    }
+
+    .research-file strong {
+      display: block;
+      color: var(--branco);
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .research-file small {
+      display: block;
+      margin-top: 4px;
+      color: var(--texto-secundario);
+      font-size: 0.7rem;
+    }
+
     .back-section {
       display: flex;
       justify-content: center;
@@ -1400,6 +1618,16 @@
         flex-direction: column;
       }
 
+
+      .research-metrics,
+      .research-files {
+        grid-template-columns: 1fr;
+      }
+
+      .research-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .structure-grid {
         grid-template-columns: 1fr;
       }
@@ -1453,8 +1681,26 @@
     @media (max-width: 480px) {
       .development-card,
       .structure-card,
-      .resource-card {
+      .resource-card,
+      .research-card {
         padding: 22px 18px;
+      }
+
+      .research-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .research-award {
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 12px;
+        padding: 14px;
+      }
+
+      .research-award-number {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        font-size: 1rem;
       }
 
       .back-home-card {
@@ -1627,7 +1873,7 @@
           class="navigation-link"
           href="#desenvolvimento"
         >
-          Desenvolvimento
+          Iniciação Científica
         </a>
 
         <a
@@ -1692,7 +1938,7 @@
 
         <li>
           <a href="#desenvolvimento">
-            Página em desenvolvimento
+            Iniciação Científica
           </a>
         </li>
 
@@ -1748,15 +1994,11 @@
           </h1>
 
           <p class="hero-description">
-            Esta seção está sendo preparada para apresentar,
-            de maneira organizada e cronológica, informações
-            sobre minha formação, experiências acadêmicas,
-            atividades de pesquisa e desenvolvimento de
-            competências.
-            <strong>
-              O conteúdo será ampliado conforme a organização
-              dos registros acadêmicos.
-            </strong>
+            Apresento minha trajetória universitária e minhas
+            experiências de pesquisa. Em destaque, a Iniciação
+            Científica em Radiofrequência realizada na UFABC com
+            bolsa CNPq, cujo trabalho recebeu o segundo lugar no
+            eixo Comunicação e Informação.
           </p>
 
           <div class="hero-actions">
@@ -1764,7 +2006,7 @@
               class="button button-primary"
               href="#desenvolvimento"
             >
-              Consultar andamento
+              Conhecer minha Iniciação Científica
               <span aria-hidden="true">↓</span>
             </a>
 
@@ -1792,11 +2034,11 @@
 
             <div>
               <strong>
-                Estrutura definida
+                Formação universitária
               </strong>
 
               <span>
-                Organização visual compatível com as demais páginas.
+                UFABC — BCeT e Engenharia de Instrumentação, Automação e Robótica.
               </span>
             </div>
           </article>
@@ -1811,11 +2053,11 @@
 
             <div>
               <strong>
-                Conteúdo em preparação
+                Pesquisa concluída
               </strong>
 
               <span>
-                Informações acadêmicas ainda serão adicionadas.
+                Iniciação Científica em Radiofrequência — UFABC, 2025–2026.
               </span>
             </div>
           </article>
@@ -1830,11 +2072,11 @@
 
             <div>
               <strong>
-                Atualização progressiva
+                Premiação acadêmica
               </strong>
 
               <span>
-                A página poderá receber novos registros futuramente.
+                2º lugar no eixo Comunicação e Informação do XVI Encontro de Iniciação Científica.
               </span>
             </div>
           </article>
@@ -1848,49 +2090,161 @@
         <header class="section-header">
           <div>
             <span class="section-label">
-              Situação da página
+              Pesquisa e iniciação científica
             </span>
 
             <h2 class="section-title">
-              Conteúdo em desenvolvimento
+              Iniciação Científica em Radiofrequência
             </h2>
 
             <p class="section-description">
-              A identidade visual e a estrutura da página já foram
-              concluídas. As informações específicas sobre formação,
-              instituições, períodos e titulações serão inseridas
-              quando estiverem organizadas.
+              Estudo, desenvolvimento e avaliação de um sistema automatizado para caracterizar rectenas por meio da medição da tensão em função do ângulo azimutal.
             </p>
           </div>
         </header>
 
-        <article class="development-card">
-          <div class="development-content">
-            <span class="section-label">
-              Atualização futura
-            </span>
+        <article class="research-card">
+          <span class="research-kicker">
+            UFABC · Bolsa CNPq · 2025–2026
+          </span>
 
-            <h3>
-              Uma seção preparada para receber novos registros
-            </h3>
+          <h3>
+            Estudo e projeto de um sistema 2D para medição do diagrama de tensão de uma rectena
+          </h3>
 
-            <p>
-              Para evitar a publicação de informações incompletas
-              ou imprecisas, esta página não apresenta cursos,
-              datas, instituições ou titulações que não tenham
-              sido fornecidos. A estrutura já está pronta para
-              incorporar esses dados posteriormente, mantendo o
-              mesmo padrão visual e de navegação do restante do
-              portfólio.
-            </p>
+          <p class="research-copy">
+            Sob orientação do Prof. Dr. Carlos E. Capovilla, desenvolvi um sistema automatizado para medir a resposta angular de rectenas, dispositivos que combinam uma antena receptora e um circuito retificador para converter energia de radiofrequência em corrente contínua. O protótipo final usa uma Raspberry Pi 4 e um motor de passo para girar o suporte, enquanto um multímetro digital mede a tensão de saída. Um programa em Python integra o movimento, a aquisição e o registro dos dados e gera os diagramas polares.
+          </p>
+
+          <p class="research-copy">
+            Nos ensaios, comparei rectenas com antenas patch e quasi-Yagi em polarização direta e cruzada. Foram realizadas oito varreduras de 360°, que produziram 24 diagramas de tensão e potência. Em geral, a polarização direta apresentou tensões maiores; as duas geometrias também mostraram diferenças no formato e na largura do lóbulo principal.
+          </p>
+
+          <div class="research-meta">
+            <span>Orientador: Prof. Dr. Carlos E. Capovilla</span>
+            <span>Área: antenas, micro-ondas e propagação de ondas</span>
+            <span>Vigência: 1º set. 2025 a 30 set. 2026</span>
           </div>
 
-          <span
-            class="development-marker"
-            aria-hidden="true"
-          >
-            ...
-          </span>
+          <div class="research-metrics">
+            <div class="research-metric">
+              <strong>360°</strong>
+              <span>varredura angular completa</span>
+            </div>
+
+            <div class="research-metric">
+              <strong>8</strong>
+              <span>varreduras experimentais realizadas</span>
+            </div>
+
+            <div class="research-metric">
+              <strong>24</strong>
+              <span>diagramas polares gerados automaticamente</span>
+            </div>
+          </div>
+
+          <div class="research-award">
+            <span class="research-award-number">
+              2º
+            </span>
+
+            <div>
+              <strong>
+                Premiação no XVI Encontro de Iniciação Científica
+              </strong>
+
+              <p>
+                O trabalho recebeu o segundo lugar no eixo Comunicação e Informação, no evento realizado de 9 a 13 de novembro de 2026. O banner também foi apresentado no XIX Simpósio de Iniciação Científica da UFABC.
+              </p>
+            </div>
+          </div>
+
+          <h3 class="research-subheading">
+            Registros da pesquisa
+          </h3>
+
+          <div class="research-gallery">
+            <figure class="research-figure">
+              <img
+                src="imagens/Banner_IC_Enrico_Simposio_UFABC_2026_Foto.jpeg"
+                alt="Enrico ao lado do banner da pesquisa no Simpósio de Iniciação Científica da UFABC"
+                loading="lazy"
+              >
+
+              <figcaption>
+                Apresentação do banner de iniciação científica na UFABC, em 2026.
+              </figcaption>
+            </figure>
+
+            <figure class="research-figure">
+              <img
+                src="imagens/Premiacao_IC_RF_Foto.jpeg"
+                alt="Enrico recebendo o certificado de segundo lugar na premiação de iniciação científica"
+                loading="lazy"
+              >
+
+              <figcaption>
+                Entrega do certificado de segundo lugar no XVI Encontro de Iniciação Científica, em novembro de 2026.
+              </figcaption>
+            </figure>
+
+            <figure class="research-figure">
+              <img
+                src="imagens/Premiacao_IC_RF_Certificado.jpg"
+                alt="Certificado de segundo lugar no eixo Comunicação e Informação"
+                loading="lazy"
+              >
+
+              <figcaption>
+                Certificado da premiação pelo trabalho sobre medição do diagrama de tensão de uma rectena.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h3 class="research-subheading">
+            Arquivos do projeto
+          </h3>
+
+          <div class="research-files">
+            <a
+              class="research-file"
+              href="imagens/Projeto_de_Pesquisa_IC_RF.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="research-file-mark" aria-hidden="true">PDF</span>
+              <span>
+                <strong>Projeto de pesquisa</strong>
+                <small>Proposta de iniciação científica</small>
+              </span>
+            </a>
+
+            <a
+              class="research-file"
+              href="imagens/Relatorio_Final_IC_2026_EnricoZRaimundo_11202320240.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="research-file-mark" aria-hidden="true">PDF</span>
+              <span>
+                <strong>Relatório final</strong>
+                <small>Resultados e descrição do sistema desenvolvido</small>
+              </span>
+            </a>
+
+            <a
+              class="research-file"
+              href="imagens/Banner_IC_Enrico_Simposio_UFABC_2026_Capovilla.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="research-file-mark" aria-hidden="true">PDF</span>
+              <span>
+                <strong>Banner apresentado</strong>
+                <small>XIX Simpósio de Iniciação Científica da UFABC</small>
+              </span>
+            </a>
+          </div>
         </article>
       </section>
 
@@ -1953,13 +2307,11 @@
             </h3>
 
             <p>
-              Área preparada para organizar experiências de
-              pesquisa, iniciação científica, projetos acadêmicos
-              e outras atividades relacionadas à formação.
+              A Iniciação Científica em Radiofrequência está detalhada na seção acima, com descrição do trabalho, resultados, premiação e arquivos.
             </p>
 
             <span class="structure-status">
-              Aguardando informações
+              Experiência registrada
             </span>
           </article>
 
