@@ -11,7 +11,6 @@
 
   <title>ENRZAN | Portfólio Acadêmico e Tecnológico</title>
 
-  <!-- Ícone da aba do navegador -->
   <link
     rel="icon"
     type="image/png"
@@ -514,26 +513,6 @@
       box-shadow: 0 0 10px var(--verde);
     }
 
-    .hero-cover-number {
-      position: absolute;
-      top: 14px;
-      right: 16px;
-      z-index: 2;
-      width: 57px;
-      height: 57px;
-      display: grid;
-      place-items: center;
-      color: var(--preto);
-      background: var(--verde);
-      border: 5px solid rgba(3, 8, 4, 0.94);
-      border-radius: 16px;
-      box-shadow: var(--sombra-verde);
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 1rem;
-      font-weight: 800;
-      transform: rotate(5deg);
-    }
-
     .hero-title-panel {
       position: relative;
       z-index: 3;
@@ -841,7 +820,7 @@
       position: relative;
       overflow: hidden;
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: 1fr;
       gap: 24px;
       padding: clamp(25px, 4vw, 42px);
       background:
@@ -854,19 +833,6 @@
       border: 1px solid var(--verde-borda);
       border-radius: 22px;
       box-shadow: var(--sombra-pequena);
-    }
-
-    .about-number {
-      width: 57px;
-      height: 57px;
-      display: grid;
-      place-items: center;
-      color: var(--preto);
-      background: var(--verde);
-      border-radius: 16px;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 1.1rem;
-      font-weight: 800;
     }
 
     .about-content h2 {
@@ -1333,11 +1299,6 @@
         grid-template-columns: 1fr;
       }
 
-      .about-number {
-        width: 51px;
-        height: 51px;
-      }
-
       .section-header {
         align-items: flex-start;
         flex-direction: column;
@@ -1375,16 +1336,6 @@
       .hero-cover-category::before {
         width: 6px;
         height: 6px;
-      }
-
-      .hero-cover-number {
-        top: 9px;
-        right: 9px;
-        width: 46px;
-        height: 46px;
-        border-width: 4px;
-        border-radius: 13px;
-        font-size: 0.82rem;
       }
 
       .hero-title-panel {
@@ -1683,10 +1634,6 @@
             <p class="hero-cover-category">
               Portfólio acadêmico e tecnológico
             </p>
-
-            <span class="hero-cover-number" aria-hidden="true">
-              01
-            </span>
           </div>
 
           <div class="hero-title-panel">
@@ -1744,10 +1691,6 @@
     <section class="about-section" id="sobre">
       <div class="container">
         <article class="about-card">
-          <div class="about-number" aria-hidden="true">
-            02
-          </div>
-
           <div class="about-content">
             <h2>Sobre este portfólio</h2>
 
