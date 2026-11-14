@@ -1109,6 +1109,32 @@
         0 18px 42px rgba(0, 0, 0, 0.46);
     }
 
+    .certificate-pdf {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: min(76vh, 760px);
+      min-height: 480px;
+      border: 0;
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    .pdf-open-link {
+      position: relative;
+      z-index: 2;
+      margin-top: 12px;
+      color: var(--verde-claro);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .pdf-open-link:hover {
+      color: var(--verde);
+      text-decoration: underline;
+    }
+
     .preview-caption {
       position: relative;
       z-index: 2;
@@ -1537,6 +1563,11 @@
         padding: 10px;
       }
 
+      .certificate-pdf {
+        height: 65vh;
+        min-height: 360px;
+      }
+
       .back-home-card {
         padding: 14px;
       }
@@ -1708,6 +1739,13 @@
 
         <a
           class="navigation-link"
+          href="#ano-2026"
+        >
+          2026
+        </a>
+
+        <a
+          class="navigation-link"
           href="#ano-2025"
         >
           2025
@@ -1784,6 +1822,12 @@
         <li>
           <a href="#topo">
             Certificados
+          </a>
+        </li>
+
+        <li>
+          <a href="#ano-2026">
+            Documentos de 2026
           </a>
         </li>
 
@@ -1891,15 +1935,15 @@
           aria-label="Resumo dos certificados"
         >
           <article class="summary-card">
-            <strong>14</strong>
+            <strong>21</strong>
 
             <span>
-              certificados e declarações disponíveis para visualização
+              certificados e documentos disponíveis para visualização
             </span>
           </article>
 
           <article class="summary-card">
-            <strong>5</strong>
+            <strong>6</strong>
 
             <span>
               anos com registros organizados
@@ -1907,7 +1951,7 @@
           </article>
 
           <article class="summary-card">
-            <strong>2018–2025</strong>
+            <strong>2018–2026</strong>
 
             <span>
               período contemplado nesta página
@@ -1927,13 +1971,13 @@
             </span>
 
             <h2 class="section-title">
-              Certificados por ano
+              Certificados e documentos por ano
             </h2>
 
             <p class="section-description">
-              Selecione um certificado para exibir ou ocultar sua
-              imagem. Também é possível abrir ou recolher todos os
-              documentos utilizando os controles disponíveis.
+              Selecione um registro para exibir ou ocultar sua
+              imagem ou documento. Também é possível abrir ou recolher
+              todos os registros utilizando os controles disponíveis.
             </p>
           </div>
 
@@ -1963,6 +2007,7 @@
           class="year-navigation"
           aria-label="Navegação entre os anos"
         >
+          <a href="#ano-2026">2026</a>
           <a href="#ano-2025">2025</a>
           <a href="#ano-2024">2024</a>
           <a href="#ano-2023">2023</a>
@@ -1971,6 +2016,394 @@
         </nav>
 
         <div class="years-list">
+          <section
+            class="year-section"
+            id="ano-2026"
+          >
+            <header class="year-header">
+              <div class="year-title-group">
+                <span
+                  class="year-marker"
+                  aria-hidden="true"
+                >
+                  26
+                </span>
+
+                <div>
+                  <h2 class="year-title">
+                    2026
+                  </h2>
+
+                  <p class="year-description">
+                    Iniciação científica, premiação e participação em eventos
+                  </p>
+                </div>
+              </div>
+
+              <span class="year-count">
+                5 documentos
+              </span>
+            </header>
+
+            <div class="certificate-list">
+              <article class="certificate-card">
+                <button
+                  class="certificate-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="preview-banner-simposio-2026"
+                  data-target="preview-banner-simposio-2026"
+                >
+                  <span
+                    class="certificate-index"
+                    aria-hidden="true"
+                  >
+                    01
+                  </span>
+
+                  <span class="certificate-information">
+                    <span class="certificate-type">
+                      Apresentação científica
+                    </span>
+
+                    <span class="certificate-name">
+                      Banner da Iniciação Científica — Simpósio UFABC 2026
+                    </span>
+
+                    <span class="certificate-institution">
+                      Universidade Federal do ABC
+                    </span>
+                  </span>
+
+                  <span class="certificate-action">
+                    <span class="toggle-label">
+                      Visualizar
+                    </span>
+
+                    <span
+                      class="certificate-arrow"
+                      aria-hidden="true"
+                    >
+                      ↓
+                    </span>
+                  </span>
+                </button>
+
+                <div
+                  class="certificate-preview"
+                  id="preview-banner-simposio-2026"
+                  hidden
+                >
+                  <div class="preview-inner">
+                    <iframe
+                      class="certificate-pdf"
+                      src="imagens/Banner_IC_Enrico_Simposio_UFABC_2026%20Capovilla.pdf"
+                      title="Banner da Iniciação Científica apresentado no Simpósio UFABC 2026"
+                      loading="lazy"
+                    ></iframe>
+
+                    <p class="preview-caption">
+                      Banner da Iniciação Científica — Simpósio UFABC 2026
+                    </p>
+
+                    <a
+                      class="pdf-open-link"
+                      href="imagens/Banner_IC_Enrico_Simposio_UFABC_2026%20Capovilla.pdf"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Abrir PDF em outra aba
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <article class="certificate-card">
+                <button
+                  class="certificate-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="preview-relatorio-final-ic-2026"
+                  data-target="preview-relatorio-final-ic-2026"
+                >
+                  <span
+                    class="certificate-index"
+                    aria-hidden="true"
+                  >
+                    02
+                  </span>
+
+                  <span class="certificate-information">
+                    <span class="certificate-type">
+                      Pesquisa científica
+                    </span>
+
+                    <span class="certificate-name">
+                      Relatório Final de Iniciação Científica 2026
+                    </span>
+
+                    <span class="certificate-institution">
+                      Universidade Federal do ABC
+                    </span>
+                  </span>
+
+                  <span class="certificate-action">
+                    <span class="toggle-label">
+                      Visualizar
+                    </span>
+
+                    <span
+                      class="certificate-arrow"
+                      aria-hidden="true"
+                    >
+                      ↓
+                    </span>
+                  </span>
+                </button>
+
+                <div
+                  class="certificate-preview"
+                  id="preview-relatorio-final-ic-2026"
+                  hidden
+                >
+                  <div class="preview-inner">
+                    <iframe
+                      class="certificate-pdf"
+                      src="imagens/Relat%C3%B3rio_Final_IC_2026_EnricoZRaimundo_11202320240.pdf"
+                      title="Relatório Final da Iniciação Científica de 2026"
+                      loading="lazy"
+                    ></iframe>
+
+                    <p class="preview-caption">
+                      Relatório Final de Iniciação Científica — 2026
+                    </p>
+
+                    <a
+                      class="pdf-open-link"
+                      href="imagens/Relat%C3%B3rio_Final_IC_2026_EnricoZRaimundo_11202320240.pdf"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Abrir PDF em outra aba
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <article class="certificate-card">
+                <button
+                  class="certificate-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="preview-projeto-pesquisa-ic-rf"
+                  data-target="preview-projeto-pesquisa-ic-rf"
+                >
+                  <span
+                    class="certificate-index"
+                    aria-hidden="true"
+                  >
+                    03
+                  </span>
+
+                  <span class="certificate-information">
+                    <span class="certificate-type">
+                      Projeto de pesquisa
+                    </span>
+
+                    <span class="certificate-name">
+                      Projeto de Pesquisa em Radiofrequência
+                    </span>
+
+                    <span class="certificate-institution">
+                      Universidade Federal do ABC
+                    </span>
+                  </span>
+
+                  <span class="certificate-action">
+                    <span class="toggle-label">
+                      Visualizar
+                    </span>
+
+                    <span
+                      class="certificate-arrow"
+                      aria-hidden="true"
+                    >
+                      ↓
+                    </span>
+                  </span>
+                </button>
+
+                <div
+                  class="certificate-preview"
+                  id="preview-projeto-pesquisa-ic-rf"
+                  hidden
+                >
+                  <div class="preview-inner">
+                    <iframe
+                      class="certificate-pdf"
+                      src="imagens/Projeto_de_Pesquisa_IC_RF.pdf"
+                      title="Projeto de pesquisa da Iniciação Científica em Radiofrequência"
+                      loading="lazy"
+                    ></iframe>
+
+                    <p class="preview-caption">
+                      Projeto de Pesquisa — Iniciação Científica em Radiofrequência
+                    </p>
+
+                    <a
+                      class="pdf-open-link"
+                      href="imagens/Projeto_de_Pesquisa_IC_RF.pdf"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Abrir PDF em outra aba
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <article class="certificate-card">
+                <button
+                  class="certificate-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="preview-premiacao-ic-rf"
+                  data-target="preview-premiacao-ic-rf"
+                >
+                  <span
+                    class="certificate-index"
+                    aria-hidden="true"
+                  >
+                    04
+                  </span>
+
+                  <span class="certificate-information">
+                    <span class="certificate-type">
+                      Premiação científica
+                    </span>
+
+                    <span class="certificate-name">
+                      Segundo lugar no XVI Encontro de Iniciação Científica
+                    </span>
+
+                    <span class="certificate-institution">
+                      Universidade Federal do ABC
+                    </span>
+                  </span>
+
+                  <span class="certificate-action">
+                    <span class="toggle-label">
+                      Visualizar
+                    </span>
+
+                    <span
+                      class="certificate-arrow"
+                      aria-hidden="true"
+                    >
+                      ↓
+                    </span>
+                  </span>
+                </button>
+
+                <div
+                  class="certificate-preview"
+                  id="preview-premiacao-ic-rf"
+                  hidden
+                >
+                  <div class="preview-inner">
+                    <iframe
+                      class="certificate-pdf"
+                      src="imagens/Premiacao_IC_RF.pdf"
+                      title="Certificado de segundo lugar no XVI Encontro de Iniciação Científica da UFABC"
+                      loading="lazy"
+                    ></iframe>
+
+                    <p class="preview-caption">
+                      Trabalho premiado: “Estudo e projeto de um sistema 2D para medição do diagrama de tensão de uma rectena” — eixo Comunicação e Informação
+                    </p>
+
+                    <a
+                      class="pdf-open-link"
+                      href="imagens/Premiacao_IC_RF.pdf"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Abrir PDF em outra aba
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <article class="certificate-card">
+                <button
+                  class="certificate-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="preview-participacao-semana-engenharias-2026"
+                  data-target="preview-participacao-semana-engenharias-2026"
+                >
+                  <span
+                    class="certificate-index"
+                    aria-hidden="true"
+                  >
+                    05
+                  </span>
+
+                  <span class="certificate-information">
+                    <span class="certificate-type">
+                      Participação em evento
+                    </span>
+
+                    <span class="certificate-name">
+                      Semana das Engenharias da UFABC 2026
+                    </span>
+
+                    <span class="certificate-institution">
+                      Universidade Federal do ABC
+                    </span>
+                  </span>
+
+                  <span class="certificate-action">
+                    <span class="toggle-label">
+                      Visualizar
+                    </span>
+
+                    <span
+                      class="certificate-arrow"
+                      aria-hidden="true"
+                    >
+                      ↓
+                    </span>
+                  </span>
+                </button>
+
+                <div
+                  class="certificate-preview"
+                  id="preview-participacao-semana-engenharias-2026"
+                  hidden
+                >
+                  <div class="preview-inner">
+                    <iframe
+                      class="certificate-pdf"
+                      src="imagens/Participacao_Sem_Eng.pdf"
+                      title="Certificado de participação na Semana das Engenharias da UFABC 2026"
+                      loading="lazy"
+                    ></iframe>
+
+                    <p class="preview-caption">
+                      Participação presencial — 21 a 25 de setembro de 2026 — carga horária de 2 horas
+                    </p>
+
+                    <a
+                      class="pdf-open-link"
+                      href="imagens/Participacao_Sem_Eng.pdf"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Abrir PDF em outra aba
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
           <section
             class="year-section"
             id="ano-2025"
@@ -1996,7 +2429,7 @@
               </div>
 
               <span class="year-count">
-                8 certificados
+                10 certificados
               </span>
             </header>
 
@@ -2503,6 +2936,149 @@
                     <p class="preview-caption">
                       Reconhecimento de Robô Mais Bonito — TamanduTech
                     </p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="certificate-card">
+                <button
+                  class="certificate-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="preview-curso-corrosao-materiais"
+                  data-target="preview-curso-corrosao-materiais"
+                >
+                  <span
+                    class="certificate-index"
+                    aria-hidden="true"
+                  >
+                    09
+                  </span>
+
+                  <span class="certificate-information">
+                    <span class="certificate-type">
+                      Curso de extensão
+                    </span>
+
+                    <span class="certificate-name">
+                      Corrosão de Materiais: seu Impacto na Sociedade e Métodos de Controle/Prevenção
+                    </span>
+
+                    <span class="certificate-institution">
+                      Universidade Federal do ABC
+                    </span>
+                  </span>
+
+                  <span class="certificate-action">
+                    <span class="toggle-label">
+                      Visualizar
+                    </span>
+
+                    <span
+                      class="certificate-arrow"
+                      aria-hidden="true"
+                    >
+                      ↓
+                    </span>
+                  </span>
+                </button>
+
+                <div
+                  class="certificate-preview"
+                  id="preview-curso-corrosao-materiais"
+                  hidden
+                >
+                  <div class="preview-inner">
+                    <iframe
+                      class="certificate-pdf"
+                      src="imagens/Curso_IC_Materiais.pdf"
+                      title="Certificado do curso Corrosão de Materiais da UFABC"
+                      loading="lazy"
+                    ></iframe>
+
+                    <p class="preview-caption">
+                      Discente voluntário — 54 horas — realizado de 23 de maio a 1º de agosto de 2025
+                    </p>
+
+                    <a
+                      class="pdf-open-link"
+                      href="imagens/Curso_IC_Materiais.pdf"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Abrir PDF em outra aba
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <article class="certificate-card">
+                <button
+                  class="certificate-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="preview-organizacao-semana-engenharia-2025"
+                  data-target="preview-organizacao-semana-engenharia-2025"
+                >
+                  <span
+                    class="certificate-index"
+                    aria-hidden="true"
+                  >
+                    10
+                  </span>
+
+                  <span class="certificate-information">
+                    <span class="certificate-type">
+                      Organização de evento
+                    </span>
+
+                    <span class="certificate-name">
+                      Comissão Organizadora da Semana das Engenharias da UFABC 2025
+                    </span>
+
+                    <span class="certificate-institution">
+                      Universidade Federal do ABC
+                    </span>
+                  </span>
+
+                  <span class="certificate-action">
+                    <span class="toggle-label">
+                      Visualizar
+                    </span>
+
+                    <span
+                      class="certificate-arrow"
+                      aria-hidden="true"
+                    >
+                      ↓
+                    </span>
+                  </span>
+                </button>
+
+                <div
+                  class="certificate-preview"
+                  id="preview-organizacao-semana-engenharia-2025"
+                  hidden
+                >
+                  <div class="preview-inner">
+                    <iframe
+                      class="certificate-pdf"
+                      src="imagens/Organizacao_Semana_Engenharia.pdf"
+                      title="Certificado de membro da Comissão Organizadora da Semana das Engenharias da UFABC 2025"
+                      loading="lazy"
+                    ></iframe>
+
+                    <p class="preview-caption">
+                      Membro da Comissão Organizadora — 360 horas — realizado de 11 de junho a 31 de outubro de 2025
+                    </p>
+
+                    <a
+                      class="pdf-open-link"
+                      href="imagens/Organizacao_Semana_Engenharia.pdf"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Abrir PDF em outra aba
+                    </a>
                   </div>
                 </div>
               </article>
@@ -3090,6 +3666,10 @@
       >
         <a href="index.html">
           Página inicial
+        </a>
+
+        <a href="#ano-2026">
+          2026
         </a>
 
         <a href="#ano-2025">
